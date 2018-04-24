@@ -1,0 +1,14 @@
+
+.test{
+    color: blue;
+    background-color: black;
+}
+
+.floating-box {
+    display: inline-block;
+    margin: 10px;
+
+}
+img {
+    border-radius: 8px;
+}
