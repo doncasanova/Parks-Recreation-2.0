@@ -20,28 +20,33 @@
     <!-- Link to Moment -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
 
+    <!--<script src="js/jquery.js"></script>-->
+    <script src="./assets/libs/us-map-1.0.1/lib/raphael.js"></script>
+    <script src="./assets/libs/us-map-1.0.1/jquery.usmap.js"></script>
+
 
 </head>
 
 <body>
+    <!-- Bootstrap Container -->
+    <div class="container">
 
-    <!-- Jumbotron for Title -->
-    <div class="jumbotron border-bottom border-dark">
-        <h1 class="text-center">Bored No More</h1>
-        <h2 class="text-center">Where all your fun begins</h2>
-    </div>
-
-    <div class="row">
-        <div class="col-4 test">
-
+        <!-- Jumbotron for Title -->
+        <div class="jumbotron border-bottom border-dark">
+            <h1 class="text-center">Bored No More</h1>
+            <h2 class="text-center">Where all your fun begins</h2>
         </div>
-    </div>
 
-   
+        <div class="row">
+            <div id="map" style="width: 800px; height: 550px;"></div>
+            <div id="clicked-state"></div>
+        </div>
+    </div>>
+
     <!-- End Container-->
 
-  <!-- Link to JavaScript -->
-  <script src=".\assets\javascript\app.js"></script>
+    <!-- Link to JavaScript -->
+    <script src=".\assets\javascript\app.js"></script>
 </body>
 
 </html>
