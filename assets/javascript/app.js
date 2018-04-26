@@ -1,5 +1,5 @@
 // $(".test").text('<p>test one two three</p>')
-
+var mapClickedState = '';
 
 $(document).ready(function() {
     $('#map').usmap({
@@ -57,8 +57,9 @@ $(document).ready(function() {
   $('#map').usmap({
     // The click action
     click: function(event, data) {
-      $('#clicked-state')
-        .text('You clicked: '+data.name)
+      $('#clicked-state').text('You clicked: ' + data.name)
+      mapClickedState = data.name;
+      console.log("State: " + mapClickedState);
         // .parent().effect('highlight', {color: '#C7F464'}, 2000);
     }
   });
