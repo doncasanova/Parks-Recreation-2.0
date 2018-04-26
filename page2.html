@@ -72,7 +72,7 @@
                     method: "GET"
                 }).then(function (response) {
                     // console.log(response);
-                    console.log(response.data)
+                    // console.log(response.data)
 
                     // Clear the table
                     $("#parks-table-body").empty();
@@ -109,7 +109,7 @@
             // Adding a click event listener
             // $(document).on("click", ".state-btn", displayParkInfo($(this).attr('data-name')));
             $(document).on("click", ".state-btn", function () {
-                console.log("State: " + $(this).attr('data-name'));
+                // console.log("State: " + $(this).attr('data-name'));
                 var stateClicked = $(this).attr('data-name');
                 $("#table-header-state").text(stateClicked);
                 displayParkInfo(stateClicked);
