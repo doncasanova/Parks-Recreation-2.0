@@ -71,8 +71,8 @@
                     url: queryURL,
                     method: "GET"
                 }).then(function (response) {
-                    // console.log(response);
-                    // console.log(response.data)
+                    console.log(response);
+                    console.log(response.data)
 
                     // Clear the table
                     $("#parks-table-body").empty();
@@ -80,7 +80,7 @@
                         // console.log("Park-" + (i + 1) + " " + response.data[i])
                         var parkObj = response.data[i];
                         $("#parks-table-body").append(`<tr class="park-row"><td>${parkObj.parkCode}</td><td>${parkObj.designation}</td><td>${parkObj.description}</td><td>${parkObj.latLong}</td></tr>`)
-
+                        
                     }
 
                 });
