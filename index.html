@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Employee Database</title>
+    <title>NPS</title>
 
     <!-- Link to jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -24,9 +24,8 @@
     <script src="./assets/libs/us-map-1.0.1/lib/raphael.js"></script>
     <script src="./assets/libs/us-map-1.0.1/jquery.usmap.js"></script>
     <!-- Link to Google Satellite Maps -->
-   <script async defer
-   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP0XstRtcU_lzliu_ZjTdXYkGNyC8EYak&callback=initMap">
-   </script>
+    
+    <link rel="stylesheet" href=".\assets\css\style.css">
 
 
 </head>
@@ -42,10 +41,10 @@
         </div>
 
         <div class="row">
-            <div id="map" style="width: 800px; height: 550px;"></div>
+            <div id="usa" style="width: 800px; height: 550px;"></div>
             <div id="clicked-state"></div>
         </div>
-    </div>>
+    </div>
     <div class="container">
         <h1>National Parks Search</h1>
         <div id="buttons-view"></div>
@@ -73,15 +72,18 @@
                 </table>
             </div>
         </div>
-        <div id="map"></div>
+        <div class="map-wrapper">
+            <div id="map"></div>
+        </div>
 
+        <!-- End Container-->
 
-    <!-- End Container-->
-    
-    <!-- Link to JavaScript -->
-    <script src=".\assets\javascript\app.js"></script>
+        <!-- Link to JavaScript -->
+        <script src=".\assets\javascript\app.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP0XstRtcU_lzliu_ZjTdXYkGNyC8EYak&callback=initMap">
+        </script>
 
-    <!-- HELLO CHUCK -->
+        <!-- HELLO CHUCK -->
 </body>
 
 </html>
