@@ -11,6 +11,7 @@ function initMap() {
 var mapClickedState = '';
 
 $(document).ready(function () {
+
   $('#usa').usmap({
     'stateSpecificStyles': {
       'AK': { fill: '#f00' }
@@ -27,6 +28,16 @@ $(document).ready(function () {
 
 
     'click': function (event, data) {
+      console.log('click1')
+
+      mapClickedState = data.name;
+
+      $('#clicked-state').text('You clicked: ' + mapClickedState)
+
+      console.log("State: " + mapClickedState);
+      $("#table-header-state").text(mapClickedState);
+      displayParkInfo(mapClickedState);
+
       $('#alert')
         .text('Click ' + data.name + ' on map 1')
         .stop()
@@ -35,24 +46,25 @@ $(document).ready(function () {
     }
   });
 
-  $('#map2').usmap({
-    'stateStyles': {
-      fill: '#025',
-      "stroke-width": 1,
-      'stroke': '#036'
-    },
-    'stateHoverStyles': {
-      fill: 'teal'
-    },
+  // $('#map2').usmap({
+  //   'stateStyles': {
+  //     fill: '#025',
+  //     "stroke-width": 1,
+  //     'stroke': '#036'
+  //   },
+  //   'stateHoverStyles': {
+  //     fill: 'teal'
+  //   },
 
-    'click': function (event, data) {
-      $('#alert')
-        .text('Click ' + data.name + ' on map 2')
-        .stop()
-        .css('backgroundColor', '#af0')
-        .animate({ backgroundColor: '#ddd' }, 1000);
-    }
-  });
+  //   'click': function (event, data) {
+  //     console.log('click2')
+  //     $('#alert')
+  //       .text('Click ' + data.name + ' on map 2')
+  //       .stop()
+  //       .css('backgroundColor', '#af0')
+  //       .animate({ backgroundColor: '#ddd' }, 1000);
+  //   }
+  // });
 
   $('#over-md').click(function (event) {
     $('#usa').usmap('trigger', 'MD', 'mouseover', event);
@@ -67,8 +79,11 @@ $(document).ready(function () {
     // The click action
     click: function (event, data) {
       $('#clicked-state').text('You clicked: ' + data.name)
+
       mapClickedState = data.name;
       console.log("State: " + mapClickedState);
+      $("#table-header-state").text(stateClicked);
+      displayParkInfo(mapClickedState);
       // .parent().effect('highlight', {color: '#C7F464'}, 2000);
     }
   });
@@ -76,7 +91,7 @@ $(document).ready(function () {
   // From HTML2   /////////////////////////////////////
 
   // var states = ["Wisconsin", "Minnesota", "Iowa", "Michigan"];
-  var states = ["WI", "MN", "IA", "MI"];
+  // var states = ["WI", "MN", "IA", "MI"];
 
   function displayParkInfo(state) {
 
@@ -107,23 +122,23 @@ $(document).ready(function () {
 
   }
 
-  function renderButtons() {
-    $("#buttons-view").empty();
+  // function renderButtons() {
+  //   $("#buttons-view").empty();
 
-    // Looping through the array of states
-    for (var i = 0; i < states.length; i++) {
-      var a = $("<button>");
-      // Adding a class
-      a.addClass("state-btn");
-      // Adding a data-attribute
-      a.attr("data-name", states[i]);
-      // Providing the initial button text
-      a.text(states[i]);
-      // Adding the button to the buttons-view div
-      $("#buttons-view").append(a);
-    }
-  }
-  renderButtons();
+  //   // Looping through the array of states
+  //   for (var i = 0; i < states.length; i++) {
+  //     var a = $("<button>");
+  //     // Adding a class
+  //     a.addClass("state-btn");
+  //     // Adding a data-attribute
+  //     a.attr("data-name", states[i]);
+  //     // Providing the initial button text
+  //     a.text(states[i]);
+  //     // Adding the button to the buttons-view div
+  //     $("#buttons-view").append(a);
+  //   }
+  // }
+  // renderButtons();
 
 
   // Adding a click event listener
