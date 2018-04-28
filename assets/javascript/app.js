@@ -1,14 +1,21 @@
 
+// Vars for Google Map
+var latitude = 36.964;
+var longitude = -122.015;
+
+// Var for clickable usa-map
+var mapClickedState = '';
+
+// Gets called automatically, and upon park-click
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 36.964, lng: -122.015 },
+    center: { lat: latitude, lng: longitude },
     zoom: 18,
     mapTypeId: 'satellite'
   });
   map.setTilt(45);
 }
 
-var mapClickedState = '';
 
 $(document).ready(function () {
 
@@ -62,12 +69,26 @@ $(document).ready(function () {
         // console.log("Park-" + (i + 1) + " " + response.data[i])
         var parkObj = response.data[i];
         console.log(parkObj.images[0].url);
-
-        $("#parks-table-body").append(`<tr class="park-row"><td>${parkObj.fullName}</td><td><a href="${parkObj.url}" target="_blank">Park Website</a></td><td>${parkObj.description}</td><td style="display:none;">${parkObj.latLong}</td><td><img src=${parkObj.images[0].url} height=100 width=100></img></td></tr>`)
+        // if (!parkObj.designation == 'National Trail') {
+          $("#parks-table-body").append(`<tr class="park-row" data-latlon="${parkObj.latLong}"><td>${parkObj.fullName}</td><td><a href="${parkObj.url}" target="_blank">Park Website</a></td><td>${parkObj.description}</td><td style="display:none;">${parkObj.latLong}</td><td><img src=${parkObj.images[0].url} height=100 width=100></img></td></tr>`)
+        // }
       }
     });
   }
-});
+
+  // Click event listener for park row
+  $(document.body).on("click", ".park-row", function () {
+     var lat = parseInt($(this).attr('data-latlon').split(',')[0].slice(4,20));
+     var lon = parseInt($(this).attr('data-latlon').split(',')[1].slice(6,20));
+    //  console.log("lat: " + lat + " lon: " + lon)
+
+     latitude = lat;
+     longitude = lon;
+     initMap();
+  })
+
+
+}); // On Doc Ready
 
 // map looper
 
@@ -102,3 +123,5 @@ function abortTimer() { // to be called when you want to stop the timer
   console.log("hello");
   clearInterval(a);
 }
+
+abortTimer();
