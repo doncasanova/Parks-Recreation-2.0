@@ -32,11 +32,7 @@
 </head>
 
 <body>
-
     <body onclick="abortTimer()">
-
-
-
         <!-- Bootstrap Container -->
         <div class="container">
 
@@ -49,15 +45,44 @@
                 <!-- <h1 class="text-center">Bored No More</h1>
                 <h2 class="text-center">Where all your fun begins</h2> -->
             </div>
-
             <div class="row">
                 <div id="usa" style="width: 800px; height: 550px;"></div>
                 <div id="clicked-state"></div>
             </div>
         </div>
-
         <div class="container">
-
+            <div class="row ">
+                <div class="col-4">
+                    <h1>National Parks Search</h1>
+                </div>
+            </div>
+            <div id="buttons-view"></div>
+            <div id="parks-view"></div>
+            <div class="panel-body border border-dark ">
+                <div class="panel modal-header">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <strong>National Park Sites in </strong>
+                            <span id="table-header-state2"></span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <table id="parks-table" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Park Code</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">lat/long</th>
+                    </tr>
+                </thead>
+                <tbody id="parks-table-body">
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
             <!-- Large modal -->
             <div id="myModal" class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
                 aria-hidden="true">
@@ -65,39 +90,12 @@
                     <div class="modal-content modal-styles ">
                         <div class="container">
                             <div class="row ">
-                                <h1>National Parks Search</h1>
-
-                                <button type="button" class="btn close-modal-button" data-dismiss="modal">Close</button>
-
-                            </div>
-                        </div>
-                        <div id="buttons-view"></div>
-                        <div id="parks-view"></div>
-                        <div class="panel-body border border-dark ">
-                            <div class="panel modal-header">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">
-                                        <strong>National Park Sites in </strong>
-                                        <span id="table-header-state2"></span>
-                                    </h3>
+                                <div class="map-wrapper">
+                                    <button type="button" class="btn close-modal-button" data-dismiss="modal">Close</button>
+                                    <div id="map"></div>
                                 </div>
                             </div>
                         </div>
-
-
-                        <table id="parks-table" class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Park Code</th>
-                                    <th scope="col">Designation</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">lat/long</th>
-                                </tr>
-                            </thead>
-                            <tbody id="parks-table-body">
-                            </tbody>
-                        </table>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -106,9 +104,7 @@
         </div>
 
 
-        <div class="map-wrapper">
-            <div id="map"></div>
-        </div>
+
 
         <!-- End Container-->
 
