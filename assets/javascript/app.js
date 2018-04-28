@@ -46,6 +46,11 @@ $(document).ready(function () {
         .stop()
         .css('backgroundColor', '#ff0')
         .animate({ backgroundColor: '#ddd' }, 1000);
+
+        // here
+        $("#myModal").modal('show');
+        console.log("modal should pop up");
+
     }
   });
 
@@ -81,6 +86,8 @@ $(document).ready(function () {
   $('#usa').usmap({
     // The click action
     click: function (event, data, ) {
+
+      console.log('usa map click');
 
       $('#clicked-state').text('You clicked: ' + data.name)
       mapClickedState = data.name;
@@ -150,6 +157,7 @@ $(document).ready(function () {
     var stateClicked = $(this).attr('data-name');
     $("#table-header-state").text(stateClicked);
     displayParkInfo(stateClicked);
+   
   })
 
 
