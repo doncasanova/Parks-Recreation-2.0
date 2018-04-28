@@ -92,7 +92,7 @@ var a = setInterval(function(){
   if (i == 50){
     i = 0;
   }
-},3000);
+},10000);
 
 
 
