@@ -1,3 +1,4 @@
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 36.964, lng: -122.015 },
@@ -77,9 +78,9 @@ $(document).ready(function () {
 
   $('#usa').usmap({
     // The click action
-    click: function (event, data) {
-      $('#clicked-state').text('You clicked: ' + data.name)
+    click: function (event, data, ) {
 
+      $('#clicked-state').text('You clicked: ' + data.name)
       mapClickedState = data.name;
       console.log("State: " + mapClickedState);
       $("#table-header-state").text(stateClicked);
@@ -87,7 +88,6 @@ $(document).ready(function () {
       // .parent().effect('highlight', {color: '#C7F464'}, 2000);
     }
   });
-
   // From HTML2   /////////////////////////////////////
 
   // var states = ["Wisconsin", "Minnesota", "Iowa", "Michigan"];
