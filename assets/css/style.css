@@ -4,6 +4,29 @@
     background-color: black;
 }
 
+/* map looper */
+#mapLooper {
+    border: 2px solid #D5CC5A;
+    overflow: hidden;
+    margin: 15px auto;
+    max-width: 100%;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+  }
+  
+  iframe {
+    border: 0px none;
+    margin-left: 1px;
+    /* height: 480px; */
+    height: 600px;
+    margin-top: 1px;
+    width: 100%;
+  }
+
+  /* end of map looper */
+
+
 .floating-box {
     display: inline-block;
     margin: 10px;

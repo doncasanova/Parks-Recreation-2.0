@@ -66,3 +66,37 @@ $(document).ready(function () {
     });
   }
 });
+
+// map looper
+
+
+// array of state names
+// to be collected from API
+const states = ['al', 'ak', 'az', 'ar', 'ca', 'co', 'ct', 'de', 'dc', 'fl', 'ga', 'hi', 'id', 'il', 'in', 'ia', 'ks', 'ky', 'la', 'me', 'md', 'ma', 'mi', 'mn', 'ms', 'mo', 'mt', 'ne', 'nv', 'nh', 'nj', 'nm', 'ny', 'nc', 'nd', 'oh', 'ok', 'or', 'pa', 'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'vt', 'wa', 'wv', 'wi', 'wy'];
+
+// set counter
+var i = 0;
+
+// path for state map image
+srcA = "https://www.nps.gov/state/";
+srcB = "/index.htm";
+
+
+
+
+// myLoop();                      //  start the loop
+
+var a = setInterval(function(){
+  document.getElementById("rotator").src = srcA + states[i] + srcB;
+  i++;
+  if (i == 50){
+    i = 0;
+  }
+},3000);
+
+
+
+function abortTimer() { // to be called when you want to stop the timer
+  console.log("hello");
+  clearInterval(a);
+}

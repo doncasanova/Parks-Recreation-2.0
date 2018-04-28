@@ -32,84 +32,93 @@
 </head>
 
 <body>
-    <!-- Bootstrap Container -->
-    <div class="container">
 
-        <!-- Jumbotron for Title -->
-        <div class="jumbotron border-bottom border-dark test">
-            <h1 class="text-center">Bored No More</h1>
-            <h2 class="text-center">Where all your fun begins</h2>
+    <body onclick="abortTimer()">
+
+
+
+        <!-- Bootstrap Container -->
+        <div class="container">
+
+            <!-- Jumbotron for Title -->
+            <div class="jumbotron border-bottom border-dark test">
+                <div id = "mapLooper">
+                    <iframe scrolling="no" src="https://www.nps.gov/state/mn/index.htm" id="rotator">
+                    </iframe>
+                </div>
+                <!-- <h1 class="text-center">Bored No More</h1>
+                <h2 class="text-center">Where all your fun begins</h2> -->
+            </div>
+
+            <div class="row">
+                <div id="usa" style="width: 800px; height: 550px;"></div>
+                <div id="clicked-state"></div>
+            </div>
         </div>
 
-        <div class="row">
-            <div id="usa" style="width: 800px; height: 550px;"></div>
-            <div id="clicked-state"></div>
-        </div>
-    </div>
+        <div class="container">
 
-    <div class="container">
+            <!-- Large modal -->
+            <div id="myModal" class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content modal-styles ">
+                        <div class="container">
+                            <div class="row ">
+                                <h1>National Parks Search</h1>
 
-        <!-- Large modal -->
-        <div id="myModal" class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content modal-styles ">
-                    <div class="container">
-                        <div class="row ">
-                            <h1>National Parks Search</h1>
+                                <button type="button" class="btn close-modal-button" data-dismiss="modal">Close</button>
 
-                            <button type="button" class="btn close-modal-button" data-dismiss="modal">Close</button>
-
-                        </div>
-                    </div>
-                    <div id="buttons-view"></div>
-                    <div id="parks-view"></div>
-                    <div class="panel-body border border-dark ">
-                        <div class="panel modal-header">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    <strong>National Park Sites in </strong>
-                                    <span id="table-header-state2"></span>
-                                </h3>
                             </div>
                         </div>
+                        <div id="buttons-view"></div>
+                        <div id="parks-view"></div>
+                        <div class="panel-body border border-dark ">
+                            <div class="panel modal-header">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <strong>National Park Sites in </strong>
+                                        <span id="table-header-state2"></span>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <table id="parks-table" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Park Code</th>
+                                    <th scope="col">Designation</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">lat/long</th>
+                                </tr>
+                            </thead>
+                            <tbody id="parks-table-body">
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
-
-
-                    <table id="parks-table" class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Park Code</th>
-                                <th scope="col">Designation</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">lat/long</th>
-                            </tr>
-                        </thead>
-                        <tbody id="parks-table-body">
-                        </tbody>
-                    </table>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-    </div>
 
-    </div>
+        </div>
 
 
-    <div class="map-wrapper">
-        <div id="map"></div>
-    </div>
+        <div class="map-wrapper">
+            <div id="map"></div>
+        </div>
 
-    <!-- End Container-->
+        <!-- End Container-->
 
-    <!-- Link to JavaScript -->
-    <script src=".\assets\javascript\app.js?v=1.3"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP0XstRtcU_lzliu_ZjTdXYkGNyC8EYak&callback=initMap">
-    </script>
+        <!-- Link to JavaScript -->
+        <script src=".\assets\javascript\app.js?v=1.3"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP0XstRtcU_lzliu_ZjTdXYkGNyC8EYak&callback=initMap">
+        </script>
 
-</body>
+    </body>
 
 </html>
