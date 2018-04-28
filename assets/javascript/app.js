@@ -68,10 +68,10 @@ $(document).ready(function () {
       for (var i = 0; i < response.data.length; i++) {
         // console.log("Park-" + (i + 1) + " " + response.data[i])
         var parkObj = response.data[i];
-        console.log(parkObj.images[0].url);
-        // if (!parkObj.designation == 'National Trail') {
+        console.log(parkObj.designation);
+        if (parkObj.designation !== 'National Scenic Trail') {
           $("#parks-table-body").append(`<tr class="park-row" data-latlon="${parkObj.latLong}"><td>${parkObj.fullName}</td><td><a href="${parkObj.url}" target="_blank">Park Website</a></td><td>${parkObj.description}</td><td style="display:none;">${parkObj.latLong}</td><td><img src=${parkObj.images[0].url} height=100 width=100></img></td></tr>`)
-        // }
+        }
       }
     });
   }
