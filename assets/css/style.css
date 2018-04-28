@@ -28,9 +28,9 @@ html, body {
     margin: 0;
     padding: 0;
 }
-button,div,form,input {
+/* button,div,form,input {
      /* margin: 10px; */
-}
+/* } */ 
 
 .map-wrapper{
     position: relative;
@@ -43,5 +43,12 @@ button,div,form,input {
     max-width: 100%;
     height: auto;
 }
+.modal-styles{
+    background-color: blanchedalmond;
+}
 
+.modal-header{
+    background-color: black;
+    color: blanchedalmond;
+}
     

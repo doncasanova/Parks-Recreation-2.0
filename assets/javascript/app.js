@@ -39,6 +39,8 @@ $(document).ready(function () {
       $("#table-header-state").text(mapClickedState);
       displayParkInfo(mapClickedState);
 
+      $("#table-header-state2").text(mapClickedState);
+
       $('#alert')
         .text('Click ' + data.name + ' on map 1')
         .stop()
