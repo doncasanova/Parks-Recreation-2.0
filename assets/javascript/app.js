@@ -34,8 +34,8 @@ $(document).ready(function () {
           .animate({ backgroundColor: '#ddd' }, 1000);
 
         // here
-        $("#myModal").modal('show');
-        console.log("modal should pop up");
+        // $("#myModal").modal('show');
+        // console.log("modal should pop up");
 
       }
     });
