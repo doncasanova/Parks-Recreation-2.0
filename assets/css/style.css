@@ -70,12 +70,17 @@ html, body {
     background-color: blanchedalmond;
 }
 
-.modal-header{
+.search-header{
     background-color: black;
     color: blanchedalmond;
 }
 .close-modal-button{
     background-color: black;
     color: blanchedalmond;
+}
+.table-style{
+   width: 50%;
+   margin: 0 auto;
+   text-align: center;
 }
     
