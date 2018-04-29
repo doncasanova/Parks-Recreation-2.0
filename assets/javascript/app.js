@@ -43,6 +43,9 @@ $(document).ready(function () {
         // here
         // $("#myModal").modal('show');
         // console.log("modal should pop up");
+        $('html, body').animate({
+          scrollTop: $("#elementtoScrollToID").offset().top
+      }, 2000);
 
       }
     });
