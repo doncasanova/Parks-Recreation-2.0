@@ -57,7 +57,7 @@ html, body {
 
 .map-wrapper{
     position: relative;
-    width: 100%;
+    width: 50%;
     height: 0;
     padding-top:56.25%;
 }
@@ -80,7 +80,7 @@ html, body {
 }
 .table-style{
    width: 50%;
-   margin: 0 auto;
+   /* margin: left ; */
    text-align: center;
 }
     
