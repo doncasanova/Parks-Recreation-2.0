@@ -1,4 +1,18 @@
 
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBdH8fV6qTKI6xTkplHXw-rhvDXGU5fpKI",
+  authDomain: "parksandrecreation2-69d5a.firebaseapp.com",
+  databaseURL: "https://parksandrecreation2-69d5a.firebaseio.com",
+  projectId: "parksandrecreation2-69d5a",
+  storageBucket: "",
+  messagingSenderId: "253408839338"
+};
+firebase.initializeApp(config);
+
+// Get a reference to the database service
+var database = firebase.database();
+
 // Vars for Google Map
 var latitude = 36.964;
 var longitude = -122.015;
@@ -27,7 +41,7 @@ $(document).ready(function () {
 
         mapClickedState = data.name;
 
-        $('#clicked-state').text('You clicked: ' + mapClickedState)
+        // $('#clicked-state').text('You clicked: ' + mapClickedState)
 
         $("#table-header-state").text(mapClickedState);
         displayParkInfo(mapClickedState);
@@ -47,8 +61,11 @@ $(document).ready(function () {
           scrollTop: $("#elementtoScrollToID").offset().top
         }, 2000);
 
-        // Un-hide Google-btn
+        // Hide Google-btn (new state, no park selected)
         $("#google-modal-btn").hide();
+
+        // Upvote the state's popularity in firebase
+        upsertStateClicks(mapClickedState);
 
       }
     });
@@ -81,8 +98,6 @@ $(document).ready(function () {
   $(document.body).on("click", ".park-row", function () {
     var lat = parseFloat($(this).attr('data-latlon').split(',')[0].slice(4, 20));
     var lon = parseFloat($(this).attr('data-latlon').split(',')[1].slice(6, 20));
-    //  console.log($(this).attr('data-latlon'));
-    //  console.log("lat: " + lat + " lon: " + lon);
 
     // Set globals for initMap function
     latitude = lat;
@@ -93,6 +108,40 @@ $(document).ready(function () {
     $("#google-modal-btn").show();
   })
 
+  // A user has just upvoted (clicked) a state, 
+  //    so either increment its current popularity if it has an existing record
+  //    or else create a new database record for the state and start it at 1
+  function upsertStateClicks(state) {
+    var hitCount = 0;
+    var curClicks = 1;
+    var pKey = '';
+
+    // Query dbref and get pkey if state record exists
+    database.ref().once("value", snapshot => snapshot.forEach(
+      function (child) {
+        var dbRec = child.val();
+        if (dbRec.stateName == state) {
+          hitCount++;
+          curClicks = dbRec.numClicks;
+          pKey = child.key;
+        }
+      }))
+      .then(function (result) {
+        // Use the Firebase .push() method for New and .update() for Existing record
+        if (hitCount > 0 && pKey) {
+          database.ref().child(pKey).update({
+            stateName: state,
+            numClicks: curClicks + 1
+          })
+        } else {
+          database.ref().push({
+            stateName: state,
+            numClicks: 1
+          })
+        }
+      })
+
+  }
 
 }); // On Doc Ready
 
