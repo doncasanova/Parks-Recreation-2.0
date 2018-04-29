@@ -7,7 +7,7 @@ var longitude = -122.015;
 var mapClickedState = '';
 
 // Gets called automatically, and upon park-click
-// Signature must reamain w/o parameters as called by Google map event
+// Signature must reamain w/o parameters as defined in url callback
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: latitude, lng: longitude },
@@ -68,7 +68,7 @@ $(document).ready(function () {
       for (var i = 0; i < response.data.length; i++) {
         var parkObj = response.data[i];
         if (parkObj.designation.toLowerCase().indexOf("trail") == -1) {
-          $("#parks-table-body").append(`<tr class="park-row" data-latlon="${parkObj.latLong}"><td>${parkObj.fullName}</td><td><a href="${parkObj.url}" target="_blank">Park Website</a></td><td>${parkObj.description}</td><td style="display:none;">${parkObj.latLong}</td><td><img src=${parkObj.images[0].url} height=100 width=100></img></td></tr>`)
+          $("#parks-table-body").append(`<tr class="park-row" data-latlon="${parkObj.latLong}"><td>${parkObj.fullName}</td><td><a href="${parkObj.url}" target="_blank">Park Website</a></td><td style="display:none;>${parkObj.description}</td><td style="display:none;">${parkObj.latLong}</td><td><img src=${parkObj.images[0].url} height=100 width=100></img></td></tr>`)
         }
       }
     });
