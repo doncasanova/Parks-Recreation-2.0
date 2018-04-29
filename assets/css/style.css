@@ -72,12 +72,29 @@ html, body {
     background-color: blanchedalmond;
 }
 
-.modal-header{
+.search-header{
     background-color: black;
     color: blanchedalmond;
 }
 .close-modal-button{
     background-color: black;
     color: blanchedalmond;
+}
+.table-style{
+   width: 50%;
+   /* margin: left ; */
+   text-align: center;
+}
+.test-position{
+    position: relative;
+    float: left;
+} 
+button{
+    background-color: white;
+    color: black;
+}
+.button2{
+    background-color: black;
+    color: white;
 }
     

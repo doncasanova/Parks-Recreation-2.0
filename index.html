@@ -32,6 +32,9 @@
 </head>
 
 <body>
+    <!-- onclick="abortLooper()"> -->
+    <!-- Bootstrap Container -->
+    <div class="container">
 
     <!-- <body onclick="abortLooper()"> -->
         <!-- Bootstrap Container -->
@@ -52,71 +55,71 @@
                 <div id="clicked-state"></div>
             </div>
         </div>
-        <div class="container">
+
+    </div>
+    <div class="row">
+        <div id="usa" style="width: 800px; height: 550px;"></div>
+        <div id="clicked-state"></div>
+    </div>
+
+    <!-- Large modal -->
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="map-wrapper">
+                    <div id="map"></div>
+                    <button type="button" class="btn button2" data-dismiss="modal">Close Google Map</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row table-style">
+            <div id="elementtoScrollToID" class="test-position">
+                <h1>National Parks Search</h1>
+            </div>
+        </div>
+        <div id="buttons-view"></div>
+        <div id="parks-view"></div>
+        <div class="panel search-header panel-heading table-style">
+            <h3 class="panel-title">
+                <button id="google-modal-btn" type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg" style="display:none;">Google Map</button>
+                <strong>National Park Sites in </strong>
+                <span id="table-header-state2"></span>
+            </h3>
+            <!-- </div> -->
             <div class="row ">
-                <div class="col-4">
-                    <h1>National Parks Search</h1>
-                </div>
-            </div>
-            <div id="buttons-view"></div>
-            <div id="parks-view"></div>
-            <div class="panel-body border border-dark ">
-                <div class="panel modal-header">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            <strong>National Park Sites in </strong>
-                            <span id="table-header-state2"></span>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <table id="parks-table" class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Park Code</th>
-                        <th scope="col">Designation</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Photo</th>
-                    </tr>
-                </thead>
-                <tbody id="parks-table-body">
-                </tbody>
-            </table>
-        </div>
-        <div class="container">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-            <!-- Large modal -->
-            <div id="myModal" class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content modal-styles ">
-                        <div class="container">
-                            <div class="row ">
-                                <div class="map-wrapper">
-                                    <button type="button" class="btn close-modal-button" data-dismiss="modal">Close</button>
-                                    <div id="map"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <table id="parks-table" class="table table-hover table-style">
+                    <thead>
+                        <tr>
+                            <th scope="col">Park Name</th>
+                            <th scope="col">URL</th>
+                            <th scope="col">Photo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="parks-table-body">
+                    </tbody>
+                </table>
             </div>
         </div>
-
-        </div>
-
-
+        <!-- </div> -->
+    </div>
 
 
-        <!-- End Container-->
 
-        <!-- Link to JavaScript -->
-        <script src=".\assets\javascript\app.js?v=1.3"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP0XstRtcU_lzliu_ZjTdXYkGNyC8EYak&callback=initMap">
-        </script>
 
-    </body>
+    <!-- End Container-->
+
+    <!-- Link to JavaScript -->
+    <script src=".\assets\javascript\app.js?v=1.3"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP0XstRtcU_lzliu_ZjTdXYkGNyC8EYak&callback=initMap">
+    </script>
+
+</body>
 
 </html>
