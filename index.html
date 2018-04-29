@@ -31,14 +31,10 @@
 
 </head>
 
-    <body>  <!-- onclick="abortLooper()"> -->
-        <!-- Bootstrap Container -->
-        <div class="container">
-
-            <!-- Jumbotron for Title -->
-            <div class="jumbotron border-bottom border-dark test">
-                <img id="rotatorImg" src="assets/img/acadia.jpg" alt="">
-            </div>
+<body>
+    <!-- onclick="abortLooper()"> -->
+    <!-- Bootstrap Container -->
+    <div class="container">
 
         <!-- Jumbotron for Title -->
         <div class="jumbotron border-bottom border-dark test">
@@ -75,7 +71,7 @@
         <div id="parks-view"></div>
         <div class="panel search-header panel-heading table-style">
             <h3 class="panel-title">
-                <button type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg">Google Map</button>
+                <button id="google-modal-btn" type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg" style="display:none;">Google Map</button>
                 <strong>National Park Sites in </strong>
                 <span id="table-header-state2"></span>
             </h3>
@@ -95,20 +91,6 @@
             </div>
         </div>
         <!-- </div> -->
-        <div class="row ">
-            <table id="parks-table" class="table table-hover table-style">
-                <thead>
-                    <tr>
-                        <th scope="col">Park Code</th>
-                        <th scope="col">Designation</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Photo</th>
-                    </tr>
-                </thead>
-                <tbody id="parks-table-body">
-                </tbody>
-            </table>
-        </div>
     </div>
 
 

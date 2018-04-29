@@ -45,7 +45,10 @@ $(document).ready(function () {
         // console.log("modal should pop up");
         $('html, body').animate({
           scrollTop: $("#elementtoScrollToID").offset().top
-      }, 2000);
+        }, 2000);
+
+        // Un-hide Google-btn
+        $("#google-modal-btn").hide();
 
       }
     });
@@ -85,6 +88,9 @@ $(document).ready(function () {
     latitude = lat;
     longitude = lon;
     initMap();
+
+    // Un-hide Google-btn
+    $("#google-modal-btn").show();
   })
 
 
