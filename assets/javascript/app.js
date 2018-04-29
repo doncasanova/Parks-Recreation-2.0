@@ -67,36 +67,53 @@ $(document).ready(function () {
   }
 });
 
-// map looper
+// map and img looper
 
 
 // array of state names
 // to be collected from API
-const states = ['al', 'ak', 'az', 'ar', 'ca', 'co', 'ct', 'de', 'dc', 'fl', 'ga', 'hi', 'id', 'il', 'in', 'ia', 'ks', 'ky', 'la', 'me', 'md', 'ma', 'mi', 'mn', 'ms', 'mo', 'mt', 'ne', 'nv', 'nh', 'nj', 'nm', 'ny', 'nc', 'nd', 'oh', 'ok', 'or', 'pa', 'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'vt', 'wa', 'wv', 'wi', 'wy'];
+// const states = ['al', 'ak', 'az', 'ar', 'ca', 'co', 'ct', 'de', 'dc', 'fl', 'ga', 'hi', 'id', 'il', 'in', 'ia', 'ks', 'ky', 'la', 'me', 'md', 'ma', 'mi', 'mn', 'ms', 'mo', 'mt', 'ne', 'nv', 'nh', 'nj', 'nm', 'ny', 'nc', 'nd', 'oh', 'ok', 'or', 'pa', 'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'vt', 'wa', 'wv', 'wi', 'wy'];
+
+// array of national park images
+const npsImg = ['grand canyon', 'yosemite', 'yellowstone','zion','bryce canyon','grand teton','arches','glacier','sequoia','joshua tree','canyonlands','redwood','hawaii','olympic','denali','acadia','mount rainier','death valley','everglades','rocky mountain','mesa verde','kings canyon','haleakala','capitol reef','badlands','crater lake','big bend','shenandoah','great smokey mountains','petrified forest','lassen volcanic','glacier bay','carlsbad caverns','north cascades','kenai fjords','mammoth cave','saguaro','great sand dunes','black canyon of the gunnison','pinnacles','wrangell-st elias','dry tortugas','wind cave','great basin','guadalupe mountains','channel islands','katmai','cuyahoga valley'];
+
 
 // set counter
 var i = 0;
+var ii = 0;
 
 // path for state map image
-srcA = "https://www.nps.gov/state/";
-srcB = "/index.htm";
+// srcA = "https://www.nps.gov/state/";
+// srcB = "/index.htm";
+
+// path for national park images
+srcC = "assets/img/";
+srcD = ".jpg";
 
 
+looper();
 
+// Looper();                      //  start the loop
 
-// myLoop();                      //  start the loop
+var a = setInterval(function () { looper() }, 2000);
 
-var a = setInterval(function(){
-  document.getElementById("rotator").src = srcA + states[i] + srcB;
-  i++;
-  if (i == 50){
-    i = 0;
+function looper() {
+  // document.getElementById("rotator").src = srcA + states[i] + srcB;
+  document.getElementById("rotatorImg").src = srcC + npsImg[ii] + srcD;
+  // i++;
+  ii++;
+  // end of maps array
+  // if (i == 50) {
+    // i = 0;
+  // }
+  // end of img array
+  if (ii == 48) {
+    ii = 0;
   }
-},3000);
+  console.log(ii);
+}
 
-
-
-function abortTimer() { // to be called when you want to stop the timer
-  console.log("hello");
+function abortLooper() { // to be called when you want to stop the timer
   clearInterval(a);
+  console.log("hello");
 }
