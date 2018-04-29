@@ -57,7 +57,7 @@ html, body {
 
 .map-wrapper{
     position: relative;
-    width: 50%;
+    width: 100%;
     height: 0;
     padding-top:56.25%;
 }
@@ -82,5 +82,17 @@ html, body {
    width: 50%;
    /* margin: left ; */
    text-align: center;
+}
+.test-position{
+    position: relative;
+    float: left;
+} 
+button{
+    background-color: white;
+    color: black;
+}
+.button2{
+    background-color: black;
+    color: white;
 }
     
