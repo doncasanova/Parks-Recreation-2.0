@@ -1,4 +1,6 @@
-
+body {
+    background-color: pink;
+}
 .test{
     color: blue;
     background-color: black;
