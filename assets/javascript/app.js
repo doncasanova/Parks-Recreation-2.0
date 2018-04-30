@@ -46,8 +46,6 @@ $(document).ready(function () {
         $("#table-header-state").text(mapClickedState);
         displayParkInfo(mapClickedState);
 
-        $("#table-header-state2").text(mapClickedState);
-
         // $('#alert')
         //   .text('Click ' + data.name + ' on map 1')
         //   .stop()
@@ -57,12 +55,12 @@ $(document).ready(function () {
         // here
         // $("#myModal").modal('show');
         // console.log("modal should pop up");
-        $('html, body').animate({
-          scrollTop: $("#elementtoScrollToID").offset().top
-        }, 2000);
+        // $('html, body').animate({
+        //   scrollTop: $("#elementtoScrollToID").offset().top
+        // }, 2000);
 
         // Hide Google-btn (new state, no park selected)
-        $("#google-modal-btn").hide();
+        // $("#google-modal-btn").hide();
 
         // Upvote the state's popularity in firebase
         upsertStateClicks(mapClickedState);
