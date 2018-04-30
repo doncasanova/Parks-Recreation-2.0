@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NPS</title>
+
+    <!-- Link to jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Link to Bootstrap -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" -->
+    <!-- crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Link to Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+
+    <!-- Link to Moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+
+    <!--<script src="js/jquery.js"></script>-->
+    <script src="./assets/libs/us-map-1.0.1/lib/raphael.js"></script>
+    <script src="./assets/libs/us-map-1.0.1/jquery.usmap.js"></script>
+    <!-- Link to Google Satellite Maps -->
+
+    <link rel="stylesheet" href=".\assets\css\style-don.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron border-bottom test">
+            <img id="rotatorImg" src="assets/img/acadia.jpg" alt="">
+
+        </div>
+        <div class="row">
+            <div id="usa" style="width: 800px; height: 550px;"></div>
+            <div id="clicked-state"></div>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="map-wrapper">
+                    <div id="map"></div>
+                    <button type="button" class="btn button2" data-dismiss="modal">Close Google Map</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row table-style test">
+            <div id="elementtoScrollToID" class="test-position">
+                <h1>National Parks Search</h1>
+            </div>
+        </div>
+        <div id="buttons-view"></div>
+        <div id="parks-view"></div>
+        <div class="panel search-header panel-heading table-style">
+            <h3 class="panel-title">
+                <button id="google-modal-btn" type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg" style="display:none;">Google Map</button>
+                <strong>National Park Sites in </strong>
+                <span id="table-header-state2"></span>
+            </h3>
+            <div class="row ">
+                <table id="parks-table" class="table table-hover table-style">
+                    <thead>
+                        <tr>
+                            <th scope="col">Park Name</th>
+                            <th scope="col">URL</th>
+                            <th scope="col">Photo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="parks-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Container-->
+
+    <!-- Link to JavaScript -->
+    <script src=".\assets\javascript\app.js?v=1.3"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP0XstRtcU_lzliu_ZjTdXYkGNyC8EYak&callback=initMap">
+    </script>
+
+</body>
+
+</html>
