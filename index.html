@@ -3,7 +3,8 @@
 
 <head>
     <!-- <link rel="stylesheet" href="\.assets\img\favicon.ico" rel="icon" type="image/x-icon" /> -->
-    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA1I+AAUYPQADN1IAD1IDACmCGQAA/yIABTo9ACWzDAAbggkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAncnJyMwAAACMnJycjAAAAERIhERcAAAAAAzMAAAAAAAADMwAAAAAAAAMzAAAAAABoWURYYAAAAAiFhVkAAAAAAIVEUAAAAAAGVFWGAAAAAACIVGAAAAAAAAVIAAAAAAAACFgAAAAAAAAAUAAAAAAAAAAAAAAAD//wAA4AcAAOAHAADgBwAA/H8AAPx/AAD8fwAA4A8AAPAfAAD4PwAA8B8AAPg/AAD8fwAA/H8AAP7/AAD//wAA" rel="icon" type="image/x-icon" />
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA1I+AAUYPQADN1IAD1IDACmCGQAA/yIABTo9ACWzDAAbggkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAncnJyMwAAACMnJycjAAAAERIhERcAAAAAAzMAAAAAAAADMwAAAAAAAAMzAAAAAABoWURYYAAAAAiFhVkAAAAAAIVEUAAAAAAGVFWGAAAAAACIVGAAAAAAAAVIAAAAAAAACFgAAAAAAAAAUAAAAAAAAAAAAAAAD//wAA4AcAAOAHAADgBwAA/H8AAPx/AAD8fwAA4A8AAPAfAAD4PwAA8B8AAPg/AAD8fwAA/H8AAP7/AAD//wAA"
+        rel="icon" type="image/x-icon" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -15,12 +16,12 @@
     <!-- Link to Bootstrap -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" -->
     <!-- crossorigin="anonymous"> -->
-    
+
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
 
 
-<!-- Materialize CSS -->
+    <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
     <!-- Link to Firebase -->
@@ -35,7 +36,7 @@
     <!-- Link to Google Satellite Maps -->
 
     <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href=".\assets\css\style.css">
 
@@ -43,29 +44,90 @@
 </head>
 
 <body>
+
+    <!-- nav bar -->
+    <nav>
+        <div class="nav-wrapper blue-grey darken-2">
+            <a href="#!" class="brand-logo">
+                <span class="logo grey-text text-lighten-2">Parks of Boot Camp</span>
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">Services</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <a href="#">Services</a>
+        </li>
+    </ul>
+
+    <!-- carousel -->
+    <div class="carousel">
+        <a class="carousel-item" href="#one!">
+            <img src="assets/img/acadia.jpg">
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="assets/img/arches.jpg">
+        </a>
+        <a class="carousel-item" href="#three!">
+            <img src="assets/img/badlands.jpg">
+        </a>
+        <a class="carousel-item" href="#four!">
+            <img src="assets/img/big bend.jpg">
+        </a>
+        <a class="carousel-item" href="#five!">
+            <img src="assets/img/black canyon of the gunnison.jpg">
+        </a>
+    </div>
+
+
     <!-- onclick="abortLooper()"> -->
     <!-- Bootstrap Container -->
     <div class="container">
 
-    <!-- <body onclick="abortLooper()"> -->
+        <!-- <body onclick="abortLooper()"> -->
         <!-- Bootstrap Container -->
         <div class="container">
 
             <!-- Jumbotron for Title -->
-            <div class="jumbotron border-bottom border-dark test">
-                <img id="rotatorImg" src="assets/img/acadia.jpg" alt="">
-                <!-- <div id="mapLooper">
+            <!-- <div class="jumbotron border-bottom border-dark test"> -->
+            <img id="rotatorImg" src="assets/img/acadia.jpg" alt="">
+            <!-- <div id="mapLooper">
                     <iframe scrolling="no" src="https://www.nps.gov/state/mn/index.htm" id="rotator">
                     </iframe>
                 </div> -->
-                <!-- <h1 class="text-center">Bored No More</h1>
+            <!-- <h1 class="text-center">Bored No More</h1>
                 <h2 class="text-center">Where all your fun begins</h2> -->
-            </div>
-            <div class="row">
-                <div id="usa" style="width: 800px; height: 550px;"></div>
-                <div id="clicked-state"></div>
+        </div>
+        
+        <!-- Modal Trigger -->
+        <div>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Modal Header</h4>
+                    <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
             </div>
         </div>
+
+        <div class="row">
+            <div id="usa" style="width: 800px; height: 550px;"></div>
+            <div id="clicked-state"></div>
+        </div>
+    </div>
 
     </div>
     <!-- <div class="row">
@@ -129,9 +191,9 @@
 
     <script src="assets/javascript/app.js"></script>
 
-<!-- Materialize CSS jQuery link -->
-<!-- THIS JQUERY LINK BREAKS THE US MAP!!! -->
-<!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
+    <!-- Materialize CSS jQuery link -->
+    <!-- THIS JQUERY LINK BREAKS THE US MAP!!! -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
@@ -140,10 +202,10 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP0XstRtcU_lzliu_ZjTdXYkGNyC8EYak&callback=initMap">
     </script>
 
-<!-- materialize CSS javaScript link -->
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    
+    <!-- materialize CSS javaScript link -->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
 </body>
 
 </html>

@@ -202,3 +202,26 @@ function abortLooper() { // to be called when you want to stop the timer
   clearInterval(a);
   console.log("hello");
 }
+
+// nav bar
+$(document).ready(function(){
+  $(".button-collapse").sidenav();
+});
+
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
+
+// carousel
+$(document).ready(function(){
+  $('.carousel').carousel();
+
+  setInterval(function(){
+    $('.carousel').carousel('next');
+  }, 2000);
+});
+
+//modal button
+$(document).ready(function(){
+  $('.modal').modal();
+});
