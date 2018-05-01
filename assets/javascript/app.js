@@ -19,6 +19,7 @@ var longitude = -122.015;
 
 // Var for clickable usa-map
 var mapClickedState = '';
+var parkClicked = '';
 
 // Gets called automatically, and upon park-click
 // Signature must reamain w/o parameters as defined in url callback
@@ -81,13 +82,13 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-
       // Clear the table
       $("#parks-table-body").empty();
       for (var i = 0; i < response.data.length; i++) {
+parkClicked = response.data[i];
         var parkObj = response.data[i];
-        if (parkObj.designation.toLowerCase().indexOf("trail") == -1) {
-          $("#parks-table-body").append(`<tr class="park-row" data-latlon="${parkObj.latLong}"><td>${parkObj.fullName}</td><td><a href="${parkObj.url}" target="_blank">Park Website</a></td><td style="display:none;>${parkObj.description}</td><td style="display:none;">${parkObj.latLong}</td><td><img src=${parkObj.images[0].url} height=100 width=100></img></td></tr>`)
+        if (parkObj.designation.toLowerCase().indexOf("trail") == -1 && parkObj.images.length > 0) {
+          $("#parks-table-body").append(`<tr class="park-row" data-latlon="${parkObj.latLong}"><td>${parkObj.fullName}</td><td><a href="${parkObj.url}" target="_blank">Park Website</a></td><td style="display:none;>${parkObj.description}</td><td style="display:none;">${parkObj.latLong}</td><td><img src=${parkObj.images[0].url} height=100 width=100></img></td><td><a href="https://www.google.com/search?q=hotels+near+${parkObj.fullName.replace(/\s/g, "+")},${mapClickedState}" target="_blank">Hotels</a></td></tr>`)
         }
       }
     });
@@ -101,10 +102,10 @@ $(document).ready(function () {
     // Set globals for initMap function
     latitude = lat;
     longitude = lon;
-    initMap();
+    // initMap();
 
     // Un-hide Google-btn
-    $("#google-modal-btn").show();
+    // $("#google-modal-btn").show();
   })
 
   // A user has just upvoted (clicked) a state, 
