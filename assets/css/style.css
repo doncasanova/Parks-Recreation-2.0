@@ -80,6 +80,12 @@ html, body {
     max-width: 100%;
     height: auto;
 }
+
+#usa-box, #table-box {
+    background-color: rgba(76, 146, 35, 0.80);
+    padding: 10px;
+}
+
 .modal-styles{
     background-color: blanchedalmond;
 }
