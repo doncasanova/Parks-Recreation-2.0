@@ -90,6 +90,10 @@ html, body {
     padding: 10px;
 }
 
+tr.park-row:hover { 
+    background-color: lightgreen;
+}
+
 .modal-styles{
     background-color: blanchedalmond;
 }

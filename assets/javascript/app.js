@@ -45,6 +45,7 @@ $(document).ready(function () {
 
         $("#table-header-state").text(mapClickedState);
         displayParkInfo(mapClickedState);
+        $("#table-box").show();
 
         // $('#alert')
         //   .text('Click ' + data.name + ' on map 1')
