@@ -167,7 +167,7 @@ srcC = "assets/img/";
 srcD = ".jpg";
 
 
-looper();
+// looper();
 
 // myLoop();                      //  start the loop
 
@@ -179,27 +179,27 @@ looper();
 //   }
 // },3000);
 
-var a = setInterval(function () { looper() }, 2000);
+// var a = setInterval(function () { looper() }, 2000);
 
-function looper() {
-  // document.getElementById("rotator").src = srcA + states[i] + srcB;
-  document.getElementById("rotatorImg").src = srcC + npsImg[ii] + srcD;
-  // i++;
-  ii++;
-  // end of maps array
-  // if (i == 50) {
-  // i = 0;
-  // }
-  // end of img array
-  if (ii == 48) {
-    ii = 0;
-  }
-}
+// function looper() {
+//   // document.getElementById("rotator").src = srcA + states[i] + srcB;
+//   document.getElementById("rotatorImg").src = srcC + npsImg[ii] + srcD;
+//   // i++;
+//   ii++;
+//   // end of maps array
+//   // if (i == 50) {
+//   // i = 0;
+//   // }
+//   // end of img array
+//   if (ii == 48) {
+//     ii = 0;
+//   }
+// }
 
-function abortLooper() { // to be called when you want to stop the timer
-  clearInterval(a);
-  console.log("hello");
-}
+// function abortLooper() { // to be called when you want to stop the timer
+//   clearInterval(a);
+//   console.log("hello");
+// }
 
 // nav bar
 $(document).ready(function(){
