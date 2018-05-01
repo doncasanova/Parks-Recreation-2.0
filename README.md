@@ -15,7 +15,7 @@ Parks and Recreation 2.0
 
     
    * AJAX to pull data
-   * Bootstrap for styling
+   * Materialize for styling
    * Firebase
    * GitHub pages
 
@@ -26,6 +26,6 @@ Parks and Recreation 2.0
 
    * Must have a polished frontend / UI
    * Must meet good quality coding standards (indentation, scoping, naming)
-   * Must NOT use alerts, confirms, or prompts (look into modals!)
+   * Must NOT use alerts, confirms, or prompts (look into modals)
    * Must have some sort of repeating element (table, columns, etc)
    * Must have User Input Validation

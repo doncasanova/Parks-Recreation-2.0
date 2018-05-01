@@ -59,9 +59,9 @@
             </a>
             <ul class="right hide-on-med-and-down">
                 <li>
-                    <!-- <a href="#">Services</a> -->
+                   
                     <li><a href="sass.html">Meet the Team</a></li>
-                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="badges.html">Our Mission</a></li>
                     <li><a href="services.html">Services</a></li>
                   
                     
@@ -72,6 +72,8 @@
 
     <ul class="sidenav" id="mobile-demo">
         <li>
+            <a href="sass.html">Meet the Team</a>
+            <a href="#">Our Mission</a>
             <a href="#">Services</a>
            
           
@@ -123,6 +125,8 @@
                             <th scope="col">URL</th>
                             <th scope="col">Photo</th>
                             <th scope="col">Hotels</th>
+                            <!-- <th scope="col">Map</th> -->
+
                         </tr>
                     </thead>
                     <tbody id="parks-table-body">
@@ -135,8 +139,23 @@
 
     </div>
     <!-- Large modal -->
+     <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+        <div class="map-wrapper">
+            <div id="map"></div>
+            <button type="button" class="btn button2" data-dismiss="modal">Close Google Map</button>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
+    <!-- <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="map-wrapper">
@@ -145,7 +164,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Link to JavaScript -->
     <!-- <script src=".\assets\javascript\app.js?v=1.3"></script> -->
