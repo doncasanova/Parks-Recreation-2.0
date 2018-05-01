@@ -1,6 +1,18 @@
-body {
-    background-color: antiquewhite;
+.b{
+    background-image: url(https://s-media-cache-ak0.pinimg.com/736x/e6/57/47/e65747747065f0288634a6ac52234cba.jpg);
+    /* background-repeat: no-repeat; */
+    /* Full height */
+    height: 100%; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+body, html {
+        height: 100%;
+    }
 .test{
     color: blue;
     background-color: black;
