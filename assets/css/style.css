@@ -18,6 +18,10 @@ body, html {
     background-color: black;
 }
 
+.carousel {
+    opacity: 1.0;
+}
+
 /* map looper */
 #mapLooper {
     border: 2px solid #D5CC5A;

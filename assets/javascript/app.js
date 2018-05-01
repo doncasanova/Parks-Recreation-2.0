@@ -219,6 +219,8 @@ $(document).ready(function(){
   }, 2000);
 });
 
+
+
 //modal button
 $(document).ready(function(){
   $('.modal').modal();
