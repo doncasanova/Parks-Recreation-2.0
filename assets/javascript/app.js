@@ -51,6 +51,7 @@ $(document).ready(function () {
 
         //brings list div in
         $('.hidden-stuff').addClass('active');
+       
         // $( ".hidden-stuff" ).animate({
         //   left: "50%",
         // }, 500, function() {
@@ -241,3 +242,8 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.modal').modal();
 });
+
+$(".btn-floating").on("click", function () {
+  $('.hidden-stuff').removeClass('active');
+
+})

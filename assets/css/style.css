@@ -1,13 +1,12 @@
 .b{
     background-image: url(https://media.giphy.com/media/B3E8bej5kwK3K/giphy.gif);
-    /* background-repeat: no-repeat; */
-    /* Full height */
     height: 100%; 
     
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 
     
 }
@@ -77,6 +76,7 @@ html, body {
      /* margin: 10px; */
 /* } */ 
 
+
 .map-wrapper{
     position: relative;
     width: 100%;
@@ -91,7 +91,7 @@ html, body {
 
 .usa-aspect-ratio {
     position:absolute;
-    top: 0;
+    top: 100px;
     left: 0;
     right: 0;
     bottom: 0;
