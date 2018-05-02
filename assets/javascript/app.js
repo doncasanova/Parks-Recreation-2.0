@@ -48,6 +48,15 @@ $(document).ready(function () {
         displayParkInfo(mapClickedState);
         $("#table-box").show();
 
+
+        //brings list div in
+        $('.hidden-stuff').addClass('active');
+        // $( ".hidden-stuff" ).animate({
+        //   left: "50%",
+        // }, 500, function() {
+        //   // Animation complete.
+        // });
+
         // $('#alert')
         //   .text('Click ' + data.name + ' on map 1')
         //   .stop()
