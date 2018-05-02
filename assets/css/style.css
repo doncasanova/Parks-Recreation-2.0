@@ -20,6 +20,21 @@ body, html {
     background-color: black;
 }
 
+/* .inline-icon {
+    vertical-align: bottom;
+    font-size: 18px !important;
+ } */
+
+/* #txt3{
+    font-size:21px;
+    line-height:24px;
+   }
+
+.material-icons{
+    display: inline-flex;
+    vertical-align: top;
+} */
+
 .carousel {
     opacity: 1.0;
     width: 50%;
