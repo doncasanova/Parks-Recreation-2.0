@@ -95,15 +95,16 @@ $(document).ready(function () {
       // Clear the table
       $("#parks-table-body").empty();
       for (var i = 0; i < response.data.length; i++) {
-parkClicked = response.data[i];
+        parkClicked = response.data[i];
         var parkObj = response.data[i];
         if (parkObj.designation.toLowerCase().indexOf("trail") == -1 && parkObj.images.length > 0) {
-          $("#parks-table-body").append(`<tr class="park-row" data-latlon="${parkObj.latLong}"><td>${parkObj.fullName}</td><td><a href="${parkObj.url}" target="_blank">Park Website</a></td><td style="display:none;>${parkObj.description}</td><td style="display:none;">${parkObj.latLong}</td><td><img src=${parkObj.images[0].url} height=100 width=100></img></td><td><a href="https://www.google.com/search?q=hotels+near+${parkObj.fullName.replace(/\s/g, "+")},${mapClickedState}" target="_blank">Hotels</a></td>
-         
-          </tr>`
-         )
-          
-       
+          $("#parks-table-body").append(`<tr class="park-row" data-latlon="${parkObj.latLong}">
+                                         <td>${parkObj.fullName}</td>
+                                         <td><a href="${parkObj.url}" target="_blank">Park Website</a></td>
+                                         <td style="display:none;">${parkObj.description}</td>
+                                         <td style="display:none;">${parkObj.latLong}</td>
+                                         <td><img src=${parkObj.images[0].url} height=100 width=100></img></td>
+                                         <td><a href="https://www.google.com/search?q=hotels+near+${parkObj.fullName.replace(/\s/g, "+")},${mapClickedState}" target="_blank">Hotels</a></td></tr>`)
         }
       }
     });
@@ -121,6 +122,25 @@ parkClicked = response.data[i];
 
     // Un-hide Google-btn
     // $("#google-modal-btn").show();
+  })
+
+
+  // Click event listener for park row -> img
+  $(document.body).on("click", ".park-row img", function () {
+
+    var $tr = $(this).closest('tr');
+    var parkName = $tr.find('td:first-child').text().trim();
+    var parkDescription = $tr.find('td:nth-child(3)').text();
+    var flickrFeed = `https://api.flickr.com/services/feeds/photos_public.gne?&tags=${parkName.replace(/\s/g, "+")}&tagmode=any&format=json&jsoncallback=?`;
+
+
+    $.getJSON(flickrFeed, function (data) {
+      console.log(parkDescription)
+      for (var i = 0; i < data.items.length; i++) {
+        console.log(data.items[i].media.m)
+      }
+
+    });
   })
 
   // A user has just upvoted (clicked) a state, 
@@ -219,19 +239,19 @@ srcD = ".jpg";
 // }
 
 // nav bar
-$(document).ready(function(){
+$(document).ready(function () {
   $(".button-collapse").sidenav();
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
   $('.sidenav').sidenav();
 });
 
 // carousel
-$(document).ready(function(){
+$(document).ready(function () {
   $('.carousel').carousel();
 
-  setInterval(function(){
+  setInterval(function () {
     $('.carousel').carousel('next');
   }, 4500);
 });
@@ -239,7 +259,7 @@ $(document).ready(function(){
 
 
 //modal button
-$(document).ready(function(){
+$(document).ready(function () {
   $('.modal').modal();
 });
 
