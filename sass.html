@@ -22,13 +22,14 @@
   font-size: 18px;
 }
 
+
 button {
   border: none;
   outline: 0;
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #000;
+  background-color: black;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -41,6 +42,19 @@ a {
   color: black;
 }
 
+#returnMenu {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 10%;
+  font-size: 18px;
+
+}
 button:hover, a:hover {
   opacity: 0.7;
 }
@@ -104,7 +118,15 @@ button:hover, a:hover {
        </div>
        <p><button></button></p>
       </div>
-    </div> 
 
+     
+      <button id="returnMenu" onclick="goBack()">Return to Main Menu</button>
+
+    </div> 
+    <script>
+    function goBack() {
+      window.history.go(-1);
+}
+    </script>
 </body>
 </html>
