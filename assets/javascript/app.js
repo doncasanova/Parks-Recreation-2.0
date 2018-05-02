@@ -126,8 +126,8 @@ $(document).ready(function () {
 
 
   // Click event listener for park row -> img
-  $(document.body).on("click", ".park-row img", function () {
-
+  $('body').on("click", ".park-row img", function () {
+console.log("HELLO DON")
     var $tr = $(this).closest('tr');
     var parkName = $tr.find('td:first-child').text().trim();
     var parkDescription = $tr.find('td:nth-child(3)').text();
@@ -138,6 +138,10 @@ $(document).ready(function () {
       console.log(parkDescription)
       for (var i = 0; i < data.items.length; i++) {
         console.log(data.items[i].media.m)
+        $(".pic-collage").append(`<img src="${data.items[i].media.m}">`)
+        $("#modal2").open();
+       console.log($("#modal2"))
+       
       }
 
     });
