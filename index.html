@@ -43,15 +43,15 @@
 
 </head>
 
-<body class = "b">
+<body class="b">
 
     <!-- nav bar -->
     <nav>
         <div class="nav-wrapper blue-grey darken-2">
             <a href="#!" class="brand-logo">
-                    <img src="./assets/img/Parks.jpg" style="width: 60px; height: 60px;">
-                 
-                
+                <img src="./assets/img/Parks.jpg" style="width: 60px; height: 60px;">
+
+
                 <span class="logo grey-text text-lighten-2">Parks and Recreation &copy</span>
             </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger">
@@ -59,12 +59,18 @@
             </a>
             <ul class="right hide-on-med-and-down">
                 <li>
-                   
-                    <li><a href="sass.html">Meet the Team</a></li>
-                    <li><a href="badges.html">Our Mission</a></li>
-                    <li><a href="services.html">Services</a></li>
-                  
-                    
+
+                    <li>
+                        <a href="sass.html">Meet the Team</a>
+                    </li>
+                    <li>
+                        <a href="badges.html">Our Mission</a>
+                    </li>
+                    <li>
+                        <a href="services.html">Services</a>
+                    </li>
+
+
                 </li>
             </ul>
         </div>
@@ -75,9 +81,9 @@
             <a href="sass.html">Meet the Team</a>
             <a href="#">Our Mission</a>
             <a href="#">Services</a>
-           
-          
-           
+
+
+
         </li>
     </ul>
 
@@ -107,31 +113,37 @@
     </div> -->
 
 
-   <div class="container">
+    <div class="container ">
 
         <div class="row">
-            <div id="usa-box" class="col s7">
+            <div id="usa-box" class="col s12">
                 <strong>Click a State to Begin Exploring!</strong>
-                <div id="usa" style="width: 100%; height: 275px;"></div>
+                <div class="usa-wrapper">
+                    <div class="usa-aspect-ratio">
+                            <div id="usa"></div>
+                    </div>
+                </div>
             </div>
-            <div hidden id="table-box" class="col s5">
-                <table id="parks-table" class="table table-hover table-style">
-                    <thead>
-                        <strong>National Park Sites in
-                            <span id="table-header-state"></span>
-                        </strong>
-                        <tr>
-                            <th scope="col">Park Name</th>
-                            <th scope="col">URL</th>
-                            <th scope="col">Photo</th>
-                            <th scope="col">Hotels</th>
-                            <!-- <th scope="col">Map</th> -->
+            <div hidden id="table-box" class="col s2">
+                <div class="hidden-stuff">
+                    <table id="parks-table" class="table table-hover table-style">
+                        <thead>
+                            <strong>National Park Sites in
+                                <span id="table-header-state"></span>
+                            </strong>
+                            <tr>
+                                <th scope="col">Park Name</th>
+                                <th scope="col">URL</th>
+                                <th scope="col">Photo</th>
+                                <th scope="col">Hotels</th>
+                                <!-- <th scope="col">Map</th> -->
 
-                        </tr>
-                    </thead>
-                    <tbody id="parks-table-body">
-                    </tbody>
-                </table>
+                            </tr>
+                        </thead>
+                        <tbody id="parks-table-body">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -142,6 +154,7 @@
 
     
     <!-- Large modal -->
+<<<<<<< HEAD
      <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
@@ -158,6 +171,23 @@
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close Google Map</a>
     </div>
   </div>
+=======
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="map-wrapper">
+                <div id="map"></div>
+                <button type="button" class="btn button2" data-dismiss="modal">Close Google Map</button>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+>>>>>>> don-22
 
     <!-- <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
