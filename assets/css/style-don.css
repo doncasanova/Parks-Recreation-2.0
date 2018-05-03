@@ -1,39 +1,28 @@
 .b{
     background-image: url(https://media.giphy.com/media/B3E8bej5kwK3K/giphy.gif);
-    /* background-repeat: no-repeat; */
-    /* Full height */
     height: 100%; 
     
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+
+    
 }
 
-    body, html {
+body, html {
         height: 100%;
     }
-    
-    /* .bg { 
-        /* The image used */
-        /* background-image: url("img_girl.jpg"); */
-    
-        /* Full height */
-        /* height: 100%;  */
-    
-        /* Center and scale the image nicely */
-        /* background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    } */ 
-
-
-
 .test{
-    color:white;
-    /* opacity: 0.1; */
-    background-color: rgba(18, 5, 94, 0.1);
-    /* opacity: .9; */
+    color: blue;
+    background-color: black;
+}
+
+.carousel {
+    opacity: 1.0;
+    width: 50%;
+    margin: auto;
 }
 
 /* map looper */
@@ -50,6 +39,7 @@
   iframe {
     border: 0px none;
     margin-left: 1px;
+    /* height: 480px; */
     height: 600px;
     margin-top: 1px;
     width: 100%;
@@ -86,6 +76,7 @@ html, body {
      /* margin: 10px; */
 /* } */ 
 
+
 .map-wrapper{
     position: relative;
     width: 100%;
@@ -93,19 +84,61 @@ html, body {
     padding-top:56.25%;
 }
 
+.usa-wrapper {
+    width: 100%;
+    padding-top: 65%;
+}
+
+.usa-aspect-ratio {
+    position:absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#usa {
+    width:100%;
+    height: 100%;
+}
+
 #usa svg{
     max-width: 100%;
     height: auto;
 }
+.hidden-stuff{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    left: 100%;
+    width: 50%;
+    background-color: white;
+    transition: left 0.5s ease-in;
+}
+.hidden-stuff.active {
+    left: 50%;
+    transition: left 0.5s ease-in;
+}
+
+#usa-box, #table-box {
+    background-color: rgba(244, 248, 241, 0.05);
+    padding: 10px;
+}
+
+tr.park-row:hover { 
+    background-color: lightgreen;
+}
+
 .modal-styles{
     background-color: blanchedalmond;
 }
 
 .search-header{
-    color:white;
-    /* opacity: 0.1; */
-    background-color: rgba(18, 5, 94, 0.6);
-    /* opacity: .9; */
+    background-color: black;
+    color: blanchedalmond;
 }
 .close-modal-button{
     background-color: black;
@@ -118,7 +151,7 @@ html, body {
 }
 .test-position{
     position: relative;
-   text-align: center;
+    float: left;
 } 
 button{
     background-color: white;
@@ -128,4 +161,3 @@ button{
     background-color: black;
     color: white;
 }
-    

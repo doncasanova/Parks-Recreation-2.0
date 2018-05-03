@@ -1,7 +1,4 @@
 
-
-
-
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyBdH8fV6qTKI6xTkplHXw-rhvDXGU5fpKI",
@@ -22,6 +19,7 @@ var longitude = -122.015;
 
 // Var for clickable usa-map
 var mapClickedState = '';
+var parkClicked = '';
 
 // Gets called automatically, and upon park-click
 // Signature must reamain w/o parameters as defined in url callback
@@ -48,8 +46,17 @@ $(document).ready(function () {
 
         $("#table-header-state").text(mapClickedState);
         displayParkInfo(mapClickedState);
+        $("#table-box").show();
 
-        $("#table-header-state2").text(mapClickedState);
+
+        //brings list div in
+        $('.hidden-stuff').addClass('active');
+       
+        // $( ".hidden-stuff" ).animate({
+        //   left: "50%",
+        // }, 500, function() {
+        //   // Animation complete.
+        // });
 
         // $('#alert')
         //   .text('Click ' + data.name + ' on map 1')
@@ -60,12 +67,12 @@ $(document).ready(function () {
         // here
         // $("#myModal").modal('show');
         // console.log("modal should pop up");
-        $('html, body').animate({
-          scrollTop: $("#elementtoScrollToID").offset().top
-        }, 2000);
+        // $('html, body').animate({
+        //   scrollTop: $("#elementtoScrollToID").offset().top
+        // }, 2000);
 
         // Hide Google-btn (new state, no park selected)
-        $("#google-modal-btn").hide();
+        // $("#google-modal-btn").hide();
 
         // Upvote the state's popularity in firebase
         upsertStateClicks(mapClickedState);
@@ -85,13 +92,19 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     }).then(function (response) {
-
       // Clear the table
       $("#parks-table-body").empty();
       for (var i = 0; i < response.data.length; i++) {
+        parkClicked = response.data[i];
         var parkObj = response.data[i];
-        if (parkObj.designation.toLowerCase().indexOf("trail") == -1) {
-          $("#parks-table-body").append(`<tr class="park-row" data-latlon="${parkObj.latLong}"><td>${parkObj.fullName}</td><td><a href="${parkObj.url}" target="_blank">Park Website</a></td><td style="display:none;>${parkObj.description}</td><td style="display:none;">${parkObj.latLong}</td><td><img src=${parkObj.images[0].url} height=100 width=100></img></td></tr>`)
+        if (parkObj.designation.toLowerCase().indexOf("trail") == -1 && parkObj.images.length > 0) {
+          $("#parks-table-body").append(`<tr class="park-row" data-latlon="${parkObj.latLong}">
+                                         <td>${parkObj.fullName}</td>
+                                         <td><a href="${parkObj.url}" target="_blank">Park Website</a></td>
+                                         <td style="display:none;">${parkObj.description}</td>
+                                         <td style="display:none;">${parkObj.latLong}</td>
+                                         <td><img src=${parkObj.images[0].url} height=100 width=100></img></td>
+                                         <td><a href="https://www.google.com/search?q=hotels+near+${parkObj.fullName.replace(/\s/g, "+")},${mapClickedState}" target="_blank">Hotels</a></td></tr>`)
         }
       }
     });
@@ -105,10 +118,33 @@ $(document).ready(function () {
     // Set globals for initMap function
     latitude = lat;
     longitude = lon;
-    initMap();
+    // initMap();
 
     // Un-hide Google-btn
-    $("#google-modal-btn").show();
+    // $("#google-modal-btn").show();
+  })
+
+
+  // Click event listener for park row -> img
+  $('body').on("click", ".park-row img", function () {
+console.log("HELLO DON")
+    var $tr = $(this).closest('tr');
+    var parkName = $tr.find('td:first-child').text().trim();
+    var parkDescription = $tr.find('td:nth-child(3)').text();
+    var flickrFeed = `https://api.flickr.com/services/feeds/photos_public.gne?&tags=${parkName.replace(/\s/g, "+")}&tagmode=any&format=json&jsoncallback=?`;
+
+
+    $.getJSON(flickrFeed, function (data) {
+      console.log(parkDescription)
+      for (var i = 0; i < data.items.length; i++) {
+        console.log(data.items[i].media.m)
+        $(".pic-collage").append(`<img src="${data.items[i].media.m}">`)
+        $("#modal2").open();
+       console.log($("#modal2"))
+       
+      }
+
+    });
   })
 
   // A user has just upvoted (clicked) a state, 
@@ -172,7 +208,7 @@ srcC = "assets/img/";
 srcD = ".jpg";
 
 
-looper();
+// looper();
 
 // myLoop();                      //  start the loop
 
@@ -184,24 +220,55 @@ looper();
 //   }
 // },3000);
 
-var a = setInterval(function () { looper() }, 2000);
+// var a = setInterval(function () { looper() }, 2000);
 
-function looper() {
-  // document.getElementById("rotator").src = srcA + states[i] + srcB;
-  document.getElementById("rotatorImg").src = srcC + npsImg[ii] + srcD;
-  // i++;
-  ii++;
-  // end of maps array
-  // if (i == 50) {
-  // i = 0;
-  // }
-  // end of img array
-  if (ii == 48) {
-    ii = 0;
-  }
-}
+// function looper() {
+//   // document.getElementById("rotator").src = srcA + states[i] + srcB;
+//   document.getElementById("rotatorImg").src = srcC + npsImg[ii] + srcD;
+//   // i++;
+//   ii++;
+//   // end of maps array
+//   // if (i == 50) {
+//   // i = 0;
+//   // }
+//   // end of img array
+//   if (ii == 48) {
+//     ii = 0;
+//   }
+// }
 
-function abortLooper() { // to be called when you want to stop the timer
-  clearInterval(a);
-  console.log("hello");
-}
+// function abortLooper() { // to be called when you want to stop the timer
+//   clearInterval(a);
+//   console.log("hello");
+// }
+
+// nav bar
+$(document).ready(function () {
+  $(".button-collapse").sidenav();
+});
+
+$(document).ready(function () {
+  $('.sidenav').sidenav();
+});
+
+// carousel
+$(document).ready(function () {
+  $('.carousel').carousel();
+
+  setInterval(function () {
+    $('.carousel').carousel('next');
+  }, 4500);
+});
+
+
+
+//modal button
+$(document).ready(function () {
+  $('.modal').modal();
+});
+
+$(".btn-floating").on("click", function () {
+  $('.hidden-stuff').removeClass('active');
+
+})
+

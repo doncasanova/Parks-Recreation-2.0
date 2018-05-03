@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
+    <!-- <link rel="stylesheet" href="\.assets\img\favicon.ico" rel="icon" type="image/x-icon" /> -->
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA1I+AAUYPQADN1IAD1IDACmCGQAA/yIABTo9ACWzDAAbggkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAncnJyMwAAACMnJycjAAAAERIhERcAAAAAAzMAAAAAAAADMwAAAAAAAAMzAAAAAABoWURYYAAAAAiFhVkAAAAAAIVEUAAAAAAGVFWGAAAAAACIVGAAAAAAAAVIAAAAAAAACFgAAAAAAAAAUAAAAAAAAAAAAAAAD//wAA4AcAAOAHAADgBwAA/H8AAPx/AAD8fwAA4A8AAPAfAAD4PwAA8B8AAPg/AAD8fwAA/H8AAP7/AAD//wAA"
+        rel="icon" type="image/x-icon" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NPS</title>
+    <title>Parks &amp Recreation 2.0</title>
 
     <!-- Link to jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -13,7 +16,13 @@
     <!-- Link to Bootstrap -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" -->
     <!-- crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 
     <!-- Link to Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
@@ -26,71 +35,152 @@
     <script src="./assets/libs/us-map-1.0.1/jquery.usmap.js"></script>
     <!-- Link to Google Satellite Maps -->
 
-    <link rel="stylesheet" href=".\assets\css\style-don.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href=".\assets\css\style.css">
 
 
 </head>
 
-<body class= "b">
-    <div class="container">
-        <div class="jumbotron border-bottom test">
-            <!-- <img id="rotatorImg" src="assets/img/acadia.jpg" alt=""> -->
+<body class="b">
 
+    <!-- nav bar -->
+    <nav>
+        <div class="nav-wrapper blue-grey darken-2">
+            <a href="#!" class="brand-logo">
+                <img src="./assets/img/Parks.jpg" style="width: 60px; height: 60px;">
+
+
+                <span class="logo grey-text text-lighten-2">Parks and Recreation &copy</span>
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <ul class="right hide-on-med-and-down">
+                <li>
+
+                    <li>
+                        <a href="sass.html">Meet the Team</a>
+                    </li>
+                    <li>
+                        <a href="mostPop.html">Most Popular</a>
+                    </li>
+                    <!-- <li><a href="services.html">Services</a></li> -->
+
+
+                </li>
+            </ul>
         </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <a href="sass.html">Meet the Team</a>
+            <a href="#">Our Mission</a>
+            <a href="#">Services</a>
+
+
+
+        </li>
+    </ul>
+    
+
+
+
+    <div class="container ">
+
         <div class="row">
-            <div id="usa" style="width: 100%; height: 550px;"></div>
-            <div id="clicked-state"></div>
-        </div>
-    </div>
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="map-wrapper">
-                    <div id="map"></div>
-                    <button type="button" class="btn button2" data-dismiss="modal">Close Google Map</button>
+            <div id="usa-box" class="col s12">
+                <strong>Click a State to Begin Exploring!</strong>
+                <div class="usa-wrapper">
+                    <div class="usa-aspect-ratio">
+                        <div id="usa"></div>
+                    </div>
+                </div>
+            </div>
+            <div hidden id="table-box" class="col s2">
+                <div class="hidden-stuff">
+                    <table id="parks-table" class="table table-hover table-style">
+                        <a class="btn-floating btn-small waves-effect waves-light black">
+                            <i class="material-icons">close</i>
+                        </a>
+                        <thead>
+                            <strong>National Park Sites in
+                                <span id="table-header-state"></span>
+                            </strong>
+                            <tr>
+                                <th scope="col">Park Name</th>
+                                <th scope="col">URL</th>
+                                <th scope="col">Photo</th>
+                                <th scope="col">Hotels</th>
+                                <!-- <th scope="col">Map</th> -->
+
+                            </tr>
+                        </thead>
+                        <tbody id="parks-table-body">
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row table-style test">
-            <div id="elementtoScrollToID" class="test-position">
-                <h1>National Parks Search</h1>
+    </div>
+
+    </div>
+
+    <!-- Large modal -->
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <div class="map-wrapper">
+                <div id="map"></div>
+                <!-- <button type="button" class="btn button2" data-dismiss="modal">Close Google Map</button> -->
+                <!-- <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close Google Map</a> -->
             </div>
         </div>
-        <div id="buttons-view"></div>
-        <div id="parks-view"></div>
-        <div class="panel search-header panel-heading table-style">
-            <h3 class="panel-title">
-                <button id="google-modal-btn" type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg" style="display:none;">Google Map</button>
-                <strong>National Park Sites in </strong>
-                <span id="table-header-state2"></span>
-            </h3>
-            <div class="row ">
-                <table id="parks-table" class="table table-hover table-style">
-                    <thead>
-                        <tr>
-                            <th scope="col">Park Name</th>
-                            <th scope="col">URL</th>
-                            <th scope="col">Photo</th>
-                        </tr>
-                    </thead>
-                    <tbody id="parks-table-body">
-                    </tbody>
-                </table>
-            </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close Google Map</a>
         </div>
     </div>
 
-    <!-- End Container-->
 
-    <!-- Link to JavaScript -->
-    <script src=".\assets\javascript\app.js?v=1.3"></script>
+    <div id="modal2" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <div class="pic-wrapper">
+                <div id="pic-collage"></div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close pictures</a>
+        </div>
+    </div>
+
+
+    <script src="assets/javascript/app.js"></script>
+
+    <!-- Materialize CSS jQuery link -->
+    <!-- THIS JQUERY LINK BREAKS THE US MAP!!! -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+
+
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP0XstRtcU_lzliu_ZjTdXYkGNyC8EYak&callback=initMap">
     </script>
 
+    <!-- materialize CSS javaScript link -->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
 </body>
 
-</html>
+<!-- </body>
+
+</html> -->

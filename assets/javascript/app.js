@@ -32,8 +32,13 @@ function initMap() {
   // map.setTilt(45);
 }
 
+
+
 // On Document Ready
 $(document).ready(function () {
+
+  $(".usa-wrapper").hide("fast", function () {
+  });
 
   // usmap click function
   $('#usa').usmap(
@@ -270,13 +275,16 @@ $(".btn-floating").on("click", function () {
 
 })
 
-$("#begin-button").on("click", function () {
-  $('#begin-button').hide();
-  $("#usa-box").css("width", "100%");
-  $("#usa-box").css("height", "100%");
-  $("#usa-box svg").css("width", "100%");
-  $("#usa-box svg").css("height", "Auto");
-  $('#usa-box').show();
+// $("#begin-button").on("click", function () {
+//   $('#begin-button').hide();
+//   $("#usa-box").css("width", "100%");
+//   $("#usa-box").css("height", "100%");
+//   $("#usa-box svg").css("width", "100%");
+//   $("#usa-box svg").css("height", "Auto");
+//   $('#usa-box').show();
+// })
+
+$("body").on("click", function () {
+$(".usa-wrapper").show("slow", function () {
+});
 })
-
-
