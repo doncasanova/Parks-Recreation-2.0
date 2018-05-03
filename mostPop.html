@@ -58,7 +58,7 @@
             transition: all 2.0s ease-in;
             position: absolute;
             bottom: 300px;
-          
+
             color: blue;
             width: 70%;
             padding: 10px;
@@ -77,77 +77,74 @@
 
 <body>
 
- <!-- nav bar -->
- <nav>
+    <!-- nav bar -->
+    <nav>
         <div class="nav-wrapper blue-grey darken-2">
             <a href="#!" class="brand-logo">
                 <img src="./assets/img/trail.jpg" style="width: 60px; height: 60px;">
 
 
 
-    <div class="heading">
-        <h1 id="heading">Most Popular State in the Nation</h1>
+                <div class="heading">
+                    <h1 id="heading">National Park's Most Popular States in the Nation</h1>
 
 
-        <div class="container">
-            <img src="./assets/img/heart.jpeg" alt="cape" style="width:80%;">
+                    <div class="container">
+                        <img src="./assets/img/heart.jpeg" alt="cape" style="width:80%;">
 
-            <div class="content animate">
-                <h1 id="mostPopState"></h1>
-                <h1 id="numberClicks"></h1>
-                <h1 id="others"></h1>
+                        <div class="content animate">
+                            <h1 id="mostPopState">The Top-3 Most Popular States Are:</h1>
+                            <!-- <h1 id="numberClicks"></h1> -->
+                            <h1 id="others"></h1>
 
-            </div>
+                        </div>
 
-        </div>
-        <button id="returnMenu" onclick="goBack()">Return to Main Menu</button>
+                    </div>
+                    <button id="returnMenu" onclick="goBack()">Return to Main Menu</button>
 
-    </div>
-
-
+                </div>
 
 
 
-    <script>
-        $(document).ready(function(){
-            $('.content').removeClass('animate');
-        });
 
-        function goBack() {
-            window.history.go(-1);
-        }
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyBdH8fV6qTKI6xTkplHXw-rhvDXGU5fpKI",
-            authDomain: "parksandrecreation2-69d5a.firebaseapp.com",
-            databaseURL: "https://parksandrecreation2-69d5a.firebaseio.com",
-            projectId: "parksandrecreation2-69d5a",
-            storageBucket: "",
-            messagingSenderId: "253408839338"
-        };
-        firebase.initializeApp(config);
 
-        // Get a reference to the database service
-        var database = firebase.database();
+                <script>
+                    $(document).ready(function () {
+                        $('.content').removeClass('animate');
+                    });
 
-        database.ref().orderByChild("numClicks").limitToLast(1).on("child_added", function (snapshot) {
-            console.log(snapshot.val());
-            $("#mostPopState").append("The most popular state is " + snapshot.val().stateName);
-            $("#numberClicks").append("Number of times clicked " + snapshot.val().numClicks);
+                    function goBack() {
+                        window.history.go(-1);
+                    }
+                    // Initialize Firebase
+                    var config = {
+                        apiKey: "AIzaSyBdH8fV6qTKI6xTkplHXw-rhvDXGU5fpKI",
+                        authDomain: "parksandrecreation2-69d5a.firebaseapp.com",
+                        databaseURL: "https://parksandrecreation2-69d5a.firebaseio.com",
+                        projectId: "parksandrecreation2-69d5a",
+                        storageBucket: "",
+                        messagingSenderId: "253408839338"
+                    };
+                    firebase.initializeApp(config);
 
-            console.log((snapshot.val().numClicks));
-        }
-)
-        database.ref().orderByChild("numClicks").limitToLast(5).on("child_added", function(snapshot){
-            console.log("Runners-up:")
-            console.log(snapshot.val())
-            $("#others").append("Other popular states are: " + snapshot.val().stateName + "/" + snapshot.val().numClicks);
-              
-        }
-        )
-    </script>
+                    // Get a reference to the database service
+                    var database = firebase.database();
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+                    // database.ref().orderByChild("numClicks").limitToLast(1).on("child_added", function (snapshot) {
+                    //     // console.log(snapshot.val());
+                    //     $("#mostPopState").append("The most popular state is " + snapshot.val().stateName);
+                    //     $("#numberClicks").append("Number of times clicked " + snapshot.val().numClicks);
+                    //     $("#others").append("Other popular states are: ");
+                    //     // console.log((snapshot.val().numClicks));
+                    // })
+
+                    database.ref().orderByChild("numClicks").limitToLast(3).on("child_added", function (snapshot) {
+                        $("#others").prepend(`<p>${snapshot.val().stateName} with ${snapshot.val().numClicks} clicks!</p>`);
+                    })
+
+                </script>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
 </body>
 
