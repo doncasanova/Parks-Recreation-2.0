@@ -134,6 +134,7 @@ $(document).ready(function () {
     var flickrFeed = `https://api.flickr.com/services/feeds/photos_public.gne?&tags=${parkName.replace(/\s/g, "+")}&tagmode=any&format=json&jsoncallback=?`;
 
     $("#pic-collage").empty();
+    $("#pic-collage").append(`<p>${parkName}</p>`);
     $.getJSON(flickrFeed, function (data) {
       for (var i = 0; i < data.items.length; i++) {
         $("#pic-collage").append(`<img src="${data.items[i].media.m}">`)
@@ -268,3 +269,14 @@ $(".btn-floating").on("click", function () {
   $('.hidden-stuff').removeClass('active');
 
 })
+
+$("#begin-button").on("click", function () {
+  $('#begin-button').hide();
+  $("#usa-box").css("width", "100%");
+  $("#usa-box").css("height", "100%");
+  $("#usa-box svg").css("width", "100%");
+  $("#usa-box svg").css("height", "Auto");
+  $('#usa-box').show();
+})
+
+
