@@ -51,7 +51,7 @@ $(document).ready(function () {
 
         //brings list div in
         $('.hidden-stuff').addClass('active');
-       
+
         // $( ".hidden-stuff" ).animate({
         //   left: "50%",
         // }, 500, function() {
@@ -127,24 +127,21 @@ $(document).ready(function () {
 
   // Click event listener for park row -> img
   $('body').on("click", ".park-row img", function () {
-console.log("HELLO DON")
+    console.log("Building Modal, add Spinner!")
     var $tr = $(this).closest('tr');
     var parkName = $tr.find('td:first-child').text().trim();
     var parkDescription = $tr.find('td:nth-child(3)').text();
     var flickrFeed = `https://api.flickr.com/services/feeds/photos_public.gne?&tags=${parkName.replace(/\s/g, "+")}&tagmode=any&format=json&jsoncallback=?`;
 
-
+    $("#pic-collage").empty();
     $.getJSON(flickrFeed, function (data) {
-      console.log(parkDescription)
       for (var i = 0; i < data.items.length; i++) {
-        console.log(data.items[i].media.m)
-        $(".pic-collage").append(`<img src="${data.items[i].media.m}">`)
-        $("#modal2").open();
-       console.log($("#modal2"))
-       
+        $("#pic-collage").append(`<img src="${data.items[i].media.m}">`)
       }
-
-    });
+    }).then(function (result) {
+      $("#pic-collage").append(`<p>${parkDescription}</p>`);
+      $("#modal2").modal('open');
+    })
   })
 
   // A user has just upvoted (clicked) a state, 
