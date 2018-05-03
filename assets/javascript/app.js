@@ -284,7 +284,7 @@ $(".btn-floating").on("click", function () {
 //   $('#usa-box').show();
 // })
 
-$("body").on("click", function () {
+$("#start").on("click", function () {
   $('#start').hide();
   $(".usa-wrapper").show("slow", function () {
   });

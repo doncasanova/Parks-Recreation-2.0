@@ -139,7 +139,9 @@
         }
 )
         database.ref().orderByChild("numClicks").limitToLast(5).on("child_added", function(snapshot){
-            $("#others").append("Other popular states are " + stateName);
+            console.log("Runners-up:")
+            console.log(snapshot.val())
+            $("#others").append("Other popular states are: " + snapshot.val().stateName + "/" + snapshot.val().numClicks);
               
         }
         )
