@@ -77,6 +77,11 @@
 
 <body>
 
+ <!-- nav bar -->
+ <nav>
+        <div class="nav-wrapper blue-grey darken-2">
+            <a href="#!" class="brand-logo">
+                <img src="./assets/img/trail.jpg" style="width: 60px; height: 60px;">
 
 
 
@@ -90,6 +95,7 @@
             <div class="content animate">
                 <h1 id="mostPopState"></h1>
                 <h1 id="numberClicks"></h1>
+                <h1 id="others"></h1>
 
             </div>
 
@@ -130,6 +136,11 @@
             $("#numberClicks").append("Number of times clicked " + snapshot.val().numClicks);
 
             console.log((snapshot.val().numClicks));
+        }
+)
+        database.ref().orderByChild("numClicks").limitToLast(5).on("child_added", function(snapshot){
+            $("#others").append("Other popular states are " + stateName);
+              
         }
         )
     </script>
