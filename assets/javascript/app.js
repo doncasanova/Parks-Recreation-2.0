@@ -32,8 +32,13 @@ function initMap() {
   // map.setTilt(45);
 }
 
+
+
 // On Document Ready
 $(document).ready(function () {
+
+  $(".usa-wrapper").hide("fast", function () {
+  });
 
   // usmap click function
   $('#usa').usmap(
@@ -51,7 +56,7 @@ $(document).ready(function () {
 
         //brings list div in
         $('.hidden-stuff').addClass('active');
-       
+
         // $( ".hidden-stuff" ).animate({
         //   left: "50%",
         // }, 500, function() {
@@ -126,21 +131,23 @@ $(document).ready(function () {
 
 
   // Click event listener for park row -> img
-  $(document.body).on("click", ".park-row img", function () {
-
+  $('body').on("click", ".park-row img", function () {
+    console.log("Building Modal, add Spinner!")
     var $tr = $(this).closest('tr');
     var parkName = $tr.find('td:first-child').text().trim();
     var parkDescription = $tr.find('td:nth-child(3)').text();
     var flickrFeed = `https://api.flickr.com/services/feeds/photos_public.gne?&tags=${parkName.replace(/\s/g, "+")}&tagmode=any&format=json&jsoncallback=?`;
 
-
+    $("#pic-collage").empty();
+    $("#pic-collage").append(`<p>${parkName}</p>`);
     $.getJSON(flickrFeed, function (data) {
-      console.log(parkDescription)
       for (var i = 0; i < data.items.length; i++) {
-        console.log(data.items[i].media.m)
+        $("#pic-collage").append(`<img src="${data.items[i].media.m}">`)
       }
-
-    });
+    }).then(function (result) {
+      $("#pic-collage").append(`<p>${parkDescription}</p>`);
+      $("#modal2").modal('open');
+    })
   })
 
   // A user has just upvoted (clicked) a state, 
@@ -266,4 +273,19 @@ $(document).ready(function () {
 $(".btn-floating").on("click", function () {
   $('.hidden-stuff').removeClass('active');
 
+})
+
+// $("#begin-button").on("click", function () {
+//   $('#begin-button').hide();
+//   $("#usa-box").css("width", "100%");
+//   $("#usa-box").css("height", "100%");
+//   $("#usa-box svg").css("width", "100%");
+//   $("#usa-box svg").css("height", "Auto");
+//   $('#usa-box').show();
+// })
+
+$("#start").on("click", function () {
+  $('#start').hide();
+  $(".usa-wrapper").show("slow", function () {
+  });
 })
