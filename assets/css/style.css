@@ -19,21 +19,6 @@ body, html {
     background-color: black;
 }
 
-/* .inline-icon {
-    vertical-align: bottom;
-    font-size: 18px !important;
- } */
-
-/* #txt3{
-    font-size:21px;
-    line-height:24px;
-   }
-
-.material-icons{
-    display: inline-flex;
-    vertical-align: top;
-} */
-
 .carousel {
     margin: auto;
     opacity: 1.0;
@@ -202,6 +187,11 @@ button{
     height: 50px;
     font-size: xx-large;
     margin: auto;
+}
+.mostP{
+    font-size: large;
+    text-decoration-style: wavy;
+    font-style: italic;
 }
 
 
