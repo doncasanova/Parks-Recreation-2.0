@@ -119,11 +119,13 @@ $(document).ready(function () {
     $("#pic-collage").empty();
     $("#pic-collage").append(`<p>${parkName}</p>`);
     $.getJSON(flickrFeed, function (data) {
+      makeThemWait(true);
       for (var i = 0; i < data.items.length; i++) {
         $("#pic-collage").append(`<img style="margin:5px;" src="${data.items[i].media.m}">`)
       }
     }).then(function (result) {
       $("#pic-collage").append(`<p>${parkDescription}</p>`);
+      makeThemWait(false);
       $("#modal2").modal('open');
     })
   })
@@ -211,3 +213,59 @@ $("#start").on("click", function () {
   $(".usa-wrapper").show("slow", function () {
   });
 })
+
+function makeThemWait(isLoading) {
+  // Create the HTML string
+  var element = '<div class="spinner-overlay"><div class="spinner"></div></div>',
+      body = document.querySelector('body');
+
+  // append HTML string to body
+  if (isLoading === true) {
+    body.insertAdjacentHTML('beforeend', element);
+    
+    var spinnerOverlay = document.querySelector(".spinner-overlay"), // your spinner overlay
+        spinner = document.querySelector(".spinner"),
+        overlayStyles = spinnerOverlay.style, // var to allow styles control
+        spinnerStyles = spinner.style;
+
+    // styling the overlay
+    overlayStyles.display = "block";
+    overlayStyles.position = "absolute";
+    overlayStyles.top = "0";
+    overlayStyles.left = "0";
+    overlayStyles.right = "0";
+    overlayStyles.bottom = "0";
+    overlayStyles.backgroundColor = "rgba(255,255,255,0.5)";
+    
+    // styling the spinner
+    spinnerStyles.width = "80px";
+    spinnerStyles.height = "80px";
+    spinnerStyles.borderRadius = "50%";
+    spinnerStyles.borderTop = "8px solid #D51067";
+    spinnerStyles.borderLeft = "8px solid transparent";
+    spinnerStyles.borderRight = "8px solid transparent";
+    spinnerStyles.borderBottom = "8px solid transparent";
+    spinnerStyles.margin = "calc(48vh - 40px) auto";
+    spinnerStyles.boxSizing = "border-box";
+    
+    // Below lines are tweakable to fit your needs in term of spin properties and time.
+    // Here the spinner will make 2 full spins each seconds for 5 min. ((360deg * 2) * 300s)
+    spinnerStyles.transition = "transform 300s linear";
+    setTimeout(function(){
+      spinnerStyles.transform = "rotate(216000deg)";
+    }, 100);
+    
+    
+  }
+  
+  if (!isLoading) {
+    var spinnerOverlay = document.querySelector(".spinner-overlay"); // your spinner overlay
+    body.removeChild(spinnerOverlay);
+  } 
+}
+
+// to launch - add "true" as argument
+// makeThemWait(true);
+
+// to stop - no argument
+//setTimeout(function() {makeThemWait()}, 5000);
