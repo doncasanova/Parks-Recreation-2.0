@@ -92,6 +92,12 @@ html, body {
      /* margin: 10px; */
 /* } */ 
 
+.exploreBtn {
+    top: 120px;
+    opacity: 0.5;
+    
+
+}
 
 .map-wrapper{
     position: relative;
