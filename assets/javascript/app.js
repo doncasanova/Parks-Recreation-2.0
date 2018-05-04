@@ -142,7 +142,7 @@ $(document).ready(function () {
     $("#pic-collage").append(`<p>${parkName}</p>`);
     $.getJSON(flickrFeed, function (data) {
       for (var i = 0; i < data.items.length; i++) {
-        $("#pic-collage").append(`<img src="${data.items[i].media.m}">`)
+        $("#pic-collage").append(`<img style="margin:5px;" src="${data.items[i].media.m}">`)
       }
     }).then(function (result) {
       $("#pic-collage").append(`<p>${parkDescription}</p>`);
