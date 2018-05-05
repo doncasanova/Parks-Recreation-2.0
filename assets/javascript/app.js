@@ -13,24 +13,9 @@ firebase.initializeApp(config);
 // Get a reference to the database service
 var database = firebase.database();
 
-// Vars for Google Map
-// var latitude = 36.964;
-// var longitude = -122.015;
-
 // Var for clickable usa-map
 var mapClickedState = '';
 var parkClicked = '';
-
-// Gets called automatically, and upon park-click
-// Signature must reamain w/o parameters as defined in url callback
-// function initMap() {
-//   var map = new google.maps.Map(document.getElementById('map'), {
-//     center: { lat: latitude, lng: longitude },
-//     zoom: 18,
-//     mapTypeId: 'satellite'
-//   });
-//   // map.setTilt(45);
-// }
 
 
 
@@ -90,21 +75,6 @@ $(document).ready(function () {
       }
     });
   }
-
-  // Click event listener for park row
-  // $(document.body).on("click", ".park-row", function () {
-  //   var lat = parseFloat($(this).attr('data-latlon').split(',')[0].slice(4, 20));
-  //   var lon = parseFloat($(this).attr('data-latlon').split(',')[1].slice(6, 20));
-
-  //   // Set globals for initMap function
-  //   latitude = lat;
-  //   longitude = lon;
-  //   // initMap();
-
-  //   // Un-hide Google-btn
-  //   // $("#google-modal-btn").show();
-  // })
-
 
   // Click event listener for park row -> img
   $('body').on("click", ".park-row img", function () {
@@ -188,6 +158,7 @@ $(document).ready(function () {
     });
   })
 
+  // Slick busy-spinner (javascript-only!) for flickr -- although flickr is so fast this is rarely seen
   function makeThemWait(isLoading) {
     // Create the HTML string
     var element = '<div class="spinner-overlay"><div class="spinner"></div></div>',
