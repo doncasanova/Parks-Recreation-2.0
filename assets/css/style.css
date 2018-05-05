@@ -18,6 +18,17 @@ body, html {
     padding: 10px;
 }
 
+.navParksLogo {
+    position: relative;
+    width: 40px;
+    top: 10px;
+}
+
+.playPause {
+    position: relative;
+    width: 40px;
+    top: 10px;
+}
 
 .floating-box {
     display: inline-block;
