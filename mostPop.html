@@ -81,7 +81,7 @@
     <nav>
         <div class="nav-wrapper blue-grey darken-2">
             <a href="#!" class="brand-logo">
-                <img src="./assets/img/trail.jpg" input type="button" onclick="homePage()" style="width: 60px; height: 60px;">
+                <img src="./assets/img/trail.jpg" input type="button" onclick="window.close();" style="width: 60px; height: 60px;">
 
 
 
@@ -94,13 +94,12 @@
 
                         <div class="content animate">
                             <h1 id="mostPopState">The Top-3 Most Popular States Are:</h1>
-                            <!-- <h1 id="numberClicks"></h1> -->
                             <h1 id="others"></h1>
 
                         </div>
 
                     </div>
-                    <button id="returnMenu" onclick="goBack()">Return to Main Menu</button>
+                    <button id="returnMenu" onclick="window.close();">Return to Main Menu</button>
 
                 </div>
 
@@ -112,14 +111,7 @@
                     $(document).ready(function () {
                         $('.content').removeClass('animate');
                     });
-
-                    function goBack() {
-                        window.location.href="./index.html";
-                    }
-
-                    function homePage() {
-                        window.location.href="./index.html";
-                    }
+                    
                     // Initialize Firebase
                     var config = {
                         apiKey: "AIzaSyBdH8fV6qTKI6xTkplHXw-rhvDXGU5fpKI",
@@ -133,14 +125,6 @@
 
                     // Get a reference to the database service
                     var database = firebase.database();
-
-                    // database.ref().orderByChild("numClicks").limitToLast(1).on("child_added", function (snapshot) {
-                    //     // console.log(snapshot.val());
-                    //     $("#mostPopState").append("The most popular state is " + snapshot.val().stateName);
-                    //     $("#numberClicks").append("Number of times clicked " + snapshot.val().numClicks);
-                    //     $("#others").append("Other popular states are: ");
-                    //     // console.log((snapshot.val().numClicks));
-                    // })
 
                     database.ref().orderByChild("numClicks").limitToLast(3).on("child_added", function (snapshot) {
                         $("#others").prepend(`<p>${snapshot.val().stateName} with ${snapshot.val().numClicks} clicks!</p>`);
