@@ -1,0 +1,42 @@
+[33mcommit 01b023d49c56d4dc3d51c1fc05326ef1a0ad441c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 9cb635e 8ffdabc
+Author: unknown <jim88star@gmail.com>
+Date:   Fri May 4 20:36:12 2018 -0500
+
+    conflict resolution
+
+[33mcommit 9cb635ea4bde74f48b5c5af172b0ecbd7736254d[m[33m ([m[1;31morigin/jim09[m[33m, [m[1;32mjim09[m[33m)[m
+Author: unknown <jim88star@gmail.com>
+Date:   Fri May 4 20:28:15 2018 -0500
+
+    front page responsive
+
+[33mcommit 8ffdabc2b5bedd3078e34c2bbc60ceb91212f22b[m
+Author: rsyal <35440553+rsyal@users.noreply.github.com>
+Date:   Fri May 4 20:25:24 2018 -0500
+
+    audio pause/play
+
+[33mcommit b922d860b1246e8a16507b1844dd4c486ac52460[m
+Author: rsyal <35440553+rsyal@users.noreply.github.com>
+Date:   Fri May 4 20:06:33 2018 -0500
+
+    added go back to logo and mostPop page
+
+[33mcommit ae8b944c10df0ba8b1172e94c6a5e9c0a34fe5e2[m
+Author: unknown <jim88star@gmail.com>
+Date:   Fri May 4 17:51:49 2018 -0500
+
+    responsive improvements to nav bar
+
+[33mcommit 0c7346a124e26dd4b4031427fac0cd9be981db36[m
+Author: doncasanova <ethanjuan@yahoo.com>
+Date:   Fri May 4 17:45:49 2018 -0500
+
+    added text and style
+
+[33mcommit cac04144999d5d48d6c771d934bdbd07ae317442[m
+Author: Chuck Wessel <chuck.wessel@gmail.com>
+Date:   Thu May 3 21:29:31 2018 -0500
+
+    Move sound div to bottom

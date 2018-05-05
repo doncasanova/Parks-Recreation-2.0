@@ -19,13 +19,6 @@ body, html {
     background-color: black;
 }
 
-.thin-text {
-    font-weight: 300;
-    background: rgba(96,125,139,.4);
-    padding: 40px;
-    border-radius: 10px;
-  }
-  
 .carousel {
     margin: auto;
     opacity: 1.0;
@@ -84,28 +77,12 @@ html, body {
      /* margin: 10px; */
 /* } */ 
 
-.npLogo {
-    position: absolute;
-    left: 60px;
-    top:20px;
-    width: 100px;
-    opacity: 0.8;
-}
-
-.welcomeText {
-    position: absolute;
-    /* left: 20px; */
-    top: 140px;
-    opacity: 0.8;
-}
-
 .exploreBtn {
-    position: absolute;
-    left: 60px;
-    bottom: 40px;
-    opacity: 0.8;
+    top: 120px;
+    opacity: 0.5;
     
 
+}
 
 .map-wrapper{
     position: relative;
@@ -210,20 +187,6 @@ button{
     height: 50px;
     font-size: xx-large;
     margin: auto;
-    top: 0px;
-    opacity: 0.8;
-
-}
-.exploreB {
-    text-align: center;
-    font-style: italic;
-    color: white;
-    opacity: .7;
-    
-}
-
-.welcomeStyle{
-    top: 20px;
 }
 .mostP{
     font-size: large;
