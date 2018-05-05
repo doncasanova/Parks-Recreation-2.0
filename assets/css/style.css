@@ -19,6 +19,19 @@ body, html {
     background-color: black;
 }
 
+.logo {
+    font-weight: 300;
+    padding: 10px;
+  }
+  
+  .thin-text {
+    font-weight: 300;
+    background: rgba(96,125,139,.4);
+    padding: 40px;
+    border-radius: 10px;
+  }
+
+
 .carousel {
     margin: auto;
     opacity: 1.0;
