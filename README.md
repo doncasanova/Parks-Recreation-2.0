@@ -13,7 +13,9 @@ Parks and Recreation 2.0
             Google Maps/Satellite
             https://google-developers.appspot.com/maps/documentation/javascript/maptypes
 
-    
+            Flickr 
+            https://api.flickr.com
+
    * AJAX to pull data
    * Materialize for styling
    * Firebase
@@ -22,10 +24,12 @@ Parks and Recreation 2.0
    * One new library
             usmap.js. A Javascript map of the United States built with SVG/VML by using Raphael as a jQuery plugin.
 
+    * User Input Validation - which States were clicked the most
+
 * Other Requirements:
 
    * Must have a polished frontend / UI
    * Must meet good quality coding standards (indentation, scoping, naming)
    * Must NOT use alerts, confirms, or prompts (look into modals)
    * Must have some sort of repeating element (table, columns, etc)
-   * Must have User Input Validation
+ 
