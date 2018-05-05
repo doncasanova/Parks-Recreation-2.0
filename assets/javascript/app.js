@@ -56,7 +56,7 @@ $(document).ready(function () {
 
         //brings list div in
         $('.hidden-stuff').addClass('active');
-        
+
         // Upvote the state's popularity in firebase
         upsertStateClicks(mapClickedState);
 
@@ -188,7 +188,7 @@ $(document).ready(function () {
 });
 
 // parallax
-$(document).ready(function(){
+$(document).ready(function () {
   $('.parallax').parallax();
 });
 
@@ -222,16 +222,16 @@ $("#start").on("click", function () {
 function makeThemWait(isLoading) {
   // Create the HTML string
   var element = '<div class="spinner-overlay"><div class="spinner"></div></div>',
-      body = document.querySelector('body');
+    body = document.querySelector('body');
 
   // append HTML string to body
   if (isLoading === true) {
     body.insertAdjacentHTML('beforeend', element);
-    
+
     var spinnerOverlay = document.querySelector(".spinner-overlay"), // your spinner overlay
-        spinner = document.querySelector(".spinner"),
-        overlayStyles = spinnerOverlay.style, // var to allow styles control
-        spinnerStyles = spinner.style;
+      spinner = document.querySelector(".spinner"),
+      overlayStyles = spinnerOverlay.style, // var to allow styles control
+      spinnerStyles = spinner.style;
 
     // styling the overlay
     overlayStyles.display = "block";
@@ -241,7 +241,7 @@ function makeThemWait(isLoading) {
     overlayStyles.right = "0";
     overlayStyles.bottom = "0";
     overlayStyles.backgroundColor = "rgba(255,255,255,0.5)";
-    
+
     // styling the spinner
     spinnerStyles.width = "80px";
     spinnerStyles.height = "80px";
@@ -252,23 +252,32 @@ function makeThemWait(isLoading) {
     spinnerStyles.borderBottom = "8px solid transparent";
     spinnerStyles.margin = "calc(48vh - 40px) auto";
     spinnerStyles.boxSizing = "border-box";
-    
+
     // Below lines are tweakable to fit your needs in term of spin properties and time.
     // Here the spinner will make 2 full spins each seconds for 5 min. ((360deg * 2) * 300s)
     spinnerStyles.transition = "transform 300s linear";
-    setTimeout(function(){
+    setTimeout(function () {
       spinnerStyles.transform = "rotate(216000deg)";
     }, 100);
-    
-    
+
+
   }
-  
+
   if (!isLoading) {
     var spinnerOverlay = document.querySelector(".spinner-overlay"); // your spinner overlay
     body.removeChild(spinnerOverlay);
-  } 
+  }
 }
 
+
+function aud_play_pause() {
+  var myAudio = document.getElementById("myTune");
+  if (myAudio.paused) {
+    myAudio.play();
+  } else {
+    myAudio.pause();
+  }
+}
 // to launch - add "true" as argument
 // makeThemWait(true);
 

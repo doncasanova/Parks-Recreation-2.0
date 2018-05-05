@@ -106,7 +106,6 @@ html, body {
     opacity: 0.8;
     
 
-}
 
 .map-wrapper{
     position: relative;
@@ -211,6 +210,20 @@ button{
     height: 50px;
     font-size: xx-large;
     margin: auto;
+    top: 0px;
+    opacity: 0.8;
+
+}
+.exploreB {
+    text-align: center;
+    font-style: italic;
+    color: white;
+    opacity: .7;
+    
+}
+
+.welcomeStyle{
+    top: 20px;
 }
 .mostP{
     font-size: large;

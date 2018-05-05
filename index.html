@@ -97,7 +97,8 @@
 
     <div class="container">
         <div class="row">
-            <div id="usa-box" class="col s12">
+            <div id="usa-box" class="col s12 exploreB">
+                <H2 class="welcomeStyle">Welcome to the virtual wonderland of USA National Parks</H2>
                 <div class="col s12">
                     <!-- <button class="exploreBtn buttonStyle waves-effect btn-lg" id="start">
                         <i class=""></i>Explore Our National Parks!</button> -->
@@ -133,8 +134,12 @@
         </div>
     </div>
 
-    <!-- Backgroun Sound -->
-    <embed src="./assets/sound/water-30-min.mp3" autostart="true" loop="true" width="0" height="0"> </embed>
+    <!-- Background Sound -->
+    <!-- <embed src="./assets/sound/water-30-min.mp3" autostart="true" loop="true" width="0" height="0"> </embed> -->
+    <audio id="myTune" src="./assets/sound/water-30-min.mp3"></audio>
+    <button type="button"  onclick="aud_play_pause()">Play/Pause Audio</button>
+
+   
 
     <!-- Large modal -->
     <!-- Modal Trigger -->
