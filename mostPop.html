@@ -81,7 +81,7 @@
     <nav>
         <div class="nav-wrapper blue-grey darken-2">
             <a href="#!" class="brand-logo">
-                <img src="./assets/img/trail.jpg" style="width: 60px; height: 60px;">
+                <img src="./assets/img/trail.jpg" input type="button" onclick="homePage()" style="width: 60px; height: 60px;">
 
 
 
@@ -114,7 +114,11 @@
                     });
 
                     function goBack() {
-                        window.history.go(-1);
+                        window.location.href="./index.html";
+                    }
+
+                    function homePage() {
+                        window.location.href="./index.html";
                     }
                     // Initialize Firebase
                     var config = {
