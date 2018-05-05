@@ -10,8 +10,8 @@ Parks and Recreation 2.0
             National Parks Service
             https://www.nps.gov/subjects/developer/index.htm
 
-            Google Maps/Satellite
-            https://google-developers.appspot.com/maps/documentation/javascript/maptypes
+            Google Hotels
+            https://www.googleapis.com/travelpartner
 
             Flickr 
             https://api.flickr.com
