@@ -90,8 +90,24 @@ html, body {
      /* margin: 10px; */
 /* } */ 
 
+
+.welcomeLogo{
+position: absolute;
+top: 20px;
+left: 80px;
+width: 100px;
+
+}
+
+.welcomeText {
+
+}
+
+.welcomeBtn {
+
+}
 .exploreBtn {
-    top: 120px;
+    /* top: 120px; */
     opacity: 0.5;
     
 
