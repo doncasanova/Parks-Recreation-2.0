@@ -216,21 +216,21 @@ button{
 }
 
 .sizingText{
-    font-size: medium;
+    font-size: small;
 }
   
 @media(min-width: 400px) {
     .sizingText{
-        font-size: medium;
+    font-size: medium;
     }
     }
-    @media(min-width: 500px) {
-        .sizingText{
-            font-size: large;
+@media(min-width: 500px) {
+    .sizingText{
+    font-size: large;
         }
         }
-    @media(min-width: 600px) {
-        .sizingText{
-            font-size: x-large;
+ @media(min-width: 600px) {
+    .sizingText{
+    font-size: x-large;
         }
         }
