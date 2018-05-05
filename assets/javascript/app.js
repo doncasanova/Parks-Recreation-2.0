@@ -264,6 +264,15 @@ function makeThemWait(isLoading) {
   } 
 }
 
+
+function aud_play_pause() {
+  var myAudio = document.getElementById("myTune");
+  if (myAudio.paused) {
+    myAudio.play();
+  } else {
+    myAudio.pause();
+  }
+}
 // to launch - add "true" as argument
 // makeThemWait(true);
 
