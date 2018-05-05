@@ -7,59 +7,16 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
-    
 }
 
 body, html {
-        height: 100%;
-    }
-.test{
-    color: blue;
-    background-color: black;
+    height: 100%;
 }
 
 .logo {
     font-weight: 300;
     padding: 10px;
-  }
-  
-  .thin-text {
-    font-weight: 300;
-    background: rgba(96,125,139,.4);
-    padding: 40px;
-    border-radius: 10px;
-  }
-
-
-.carousel {
-    margin: auto;
-    opacity: 1.0;
-    width: 40%;
-    margin: auto;
 }
-
-/* map looper */
-#mapLooper {
-    border: 2px solid #D5CC5A;
-    overflow: hidden;
-    margin: 15px auto;
-    max-width: 100%;
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-  }
-  
-  iframe {
-    border: 0px none;
-    margin-left: 1px;
-    /* height: 480px; */
-    height: 600px;
-    margin-top: 1px;
-    width: 100%;
-  }
-
-  /* end of map looper */
 
 
 .floating-box {
@@ -67,36 +24,16 @@ body, html {
     margin: 10px;
 
 }
+
 img {
     border-radius: 8px;
 }
 
-#map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
   /* Optional: Makes the sample page fill the window. */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-/* button,div,form,input {
-     /* margin: 10px; */
-/* } */ 
-
-
-
-.exploreBtn {
-    top: 120px;
-    opacity: 0.5;
-    
-
 }
 
 .map-wrapper{
@@ -142,6 +79,7 @@ html, body {
     background-color: white;
     transition: left 0.5s ease-in;
 }
+
 .hidden-stuff.active {
     left: 20%;
     transition: left 0.5s ease-in;
@@ -159,12 +97,14 @@ html, body {
     transition: left 0.5s ease-in;
     }
 }
+
 @media(min-width: 700px) {
     .hidden-stuff.active{
     left: 60%;
     transition: left 0.5s ease-in;
-        }
     }
+}
+
 @media(min-width: 992px) {
     .hidden-stuff{
     position: fixed;
@@ -177,12 +117,14 @@ html, body {
     transition: left 0.5s ease-in;
     }
 }   
+
 @media(min-width: 992px) {
     .hidden-stuff.active{
     left: 70%;
     transition: left 0.5s ease-in;
-        }
     }
+}
+
 @media(min-width: 1400px) {
     .hidden-stuff{
     position: fixed;
@@ -195,12 +137,13 @@ html, body {
     transition: left 0.5s ease-in;
     }
 }
+
 @media(min-width: 1400px) {
     .hidden-stuff.active{
     left: 70%;
     transition: left 0.5s ease-in;
-        }
     }
+}
 
 #usa-box, #table-box {
     background-color: rgba(244, 248, 241, 0.05);
@@ -233,40 +176,39 @@ tr.park-row img:hover {
     background-color: black;
     color: blanchedalmond;
 }
+
 .close-modal-button{
     background-color: black;
     color: blanchedalmond;
 }
+
 .table-style{
    width: 50%;
    /* margin: left ; */
    text-align: center;
 }
-.test-position{
-    position: relative;
-    float: left;
-} 
+
 button{
     background-color: white;
     color: black;
-}
-.button2{
-    background-color: black;
-    color: white;
 }
 
 .navBarStyle{
     background-color: rgb(24, 9, 9);
 }
-.buttonStyle{
+
+.exploreBtn {
+    top: 120px;
+    opacity: 0.5;
     background-color: rgb(24, 9, 9);
     border-radius: 10px;
     color: white;
     width: 50%;
-    height: 50px;
+    line-height: 2;
     font-size: xx-large;
     margin: auto;
 }
+
 .mostP{
     font-size: large;
     text-decoration-style: wavy;
