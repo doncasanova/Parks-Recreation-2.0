@@ -39,7 +39,7 @@
     <!-- nav bar -->
     <nav>
         <div class="nav-wrapper navBarStyle darken-2">
-                <img id="logoSize" src="./assets/img/trail.jpg">
+                <img class="navParksLogo" id="logoSize" src="./assets/img/trail.jpg">
             <a href="#!" class="brand-logo">
                 <span class="logo grey-text text-lighten-2 logo">
                     <i class="hide-on-med-and-down material-icons right sizingText">copyright</i>
@@ -53,9 +53,11 @@
                 <li>
                     
                     <a class="mostP" target="_blank" href="mostPop.html">Most Popular</a>
+                    <li> <audio id="myTune" src="./assets/sound/water-30-min.mp3"></audio>
+                        <a class="button styleLogo"  onclick="aud_play_pause()"><img class="playPause" id="logoSize" src="assets/img/play_pause.png"></a></li>
+                    
                 </li>
-                <li> <audio id="myTune" src="./assets/sound/water-30-min.mp3"></audio>
-                    <a class="button styleLogo"  onclick="aud_play_pause()">Play/Pause Audio</a></li>
+                
             </ul>
         </div>
     </nav>
