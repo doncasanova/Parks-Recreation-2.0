@@ -218,6 +218,13 @@ tr.park-row img:hover {
     cursor: pointer;
   }
 
+#start:hover {
+    transition: box-shadow 0.3s, transform 0.6s;
+    transform: translate3d(3px, -3px, 0);
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, 0.1);
+    cursor: pointer;
+}
+
 .modal-styles{
     background-color: blanchedalmond;
 }
