@@ -14,8 +14,8 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 // Vars for Google Map
-var latitude = 36.964;
-var longitude = -122.015;
+// var latitude = 36.964;
+// var longitude = -122.015;
 
 // Var for clickable usa-map
 var mapClickedState = '';
@@ -23,14 +23,14 @@ var parkClicked = '';
 
 // Gets called automatically, and upon park-click
 // Signature must reamain w/o parameters as defined in url callback
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: latitude, lng: longitude },
-    zoom: 18,
-    mapTypeId: 'satellite'
-  });
-  // map.setTilt(45);
-}
+// function initMap() {
+//   var map = new google.maps.Map(document.getElementById('map'), {
+//     center: { lat: latitude, lng: longitude },
+//     zoom: 18,
+//     mapTypeId: 'satellite'
+//   });
+//   // map.setTilt(45);
+// }
 
 
 
@@ -46,8 +46,6 @@ $(document).ready(function () {
       'click': function (event, data) {
 
         mapClickedState = data.name;
-
-        // $('#clicked-state').text('You clicked: ' + mapClickedState)
 
         $("#table-header-state").text(mapClickedState);
         displayParkInfo(mapClickedState);
@@ -94,23 +92,22 @@ $(document).ready(function () {
   }
 
   // Click event listener for park row
-  $(document.body).on("click", ".park-row", function () {
-    var lat = parseFloat($(this).attr('data-latlon').split(',')[0].slice(4, 20));
-    var lon = parseFloat($(this).attr('data-latlon').split(',')[1].slice(6, 20));
+  // $(document.body).on("click", ".park-row", function () {
+  //   var lat = parseFloat($(this).attr('data-latlon').split(',')[0].slice(4, 20));
+  //   var lon = parseFloat($(this).attr('data-latlon').split(',')[1].slice(6, 20));
 
-    // Set globals for initMap function
-    latitude = lat;
-    longitude = lon;
-    // initMap();
+  //   // Set globals for initMap function
+  //   latitude = lat;
+  //   longitude = lon;
+  //   // initMap();
 
-    // Un-hide Google-btn
-    // $("#google-modal-btn").show();
-  })
+  //   // Un-hide Google-btn
+  //   // $("#google-modal-btn").show();
+  // })
 
 
   // Click event listener for park row -> img
   $('body').on("click", ".park-row img", function () {
-    console.log("Building Modal, add Spinner!")
     var $tr = $(this).closest('tr');
     var parkName = $tr.find('td:first-child').text().trim();
     var parkDescription = $tr.find('td:nth-child(3)').text();
@@ -165,109 +162,85 @@ $(document).ready(function () {
 
   }
 
+  // nav bar
+  $(document).ready(function () {
+    $(".button-collapse").sidenav();
+  });
+
+  // sidenav bar (hamburger)
+  $(document).ready(function () {
+    $('.sidenav').sidenav();
+  });
+
+  //modal button
+  $(document).ready(function () {
+    $('.modal').modal();
+  });
+
+  $(".btn-floating").on("click", function () {
+    $('.hidden-stuff').removeClass('active');
+
+  })
+
+  $("#start").on("click", function () {
+    $('#start').hide();
+    $(".usa-wrapper").show("slow", function () {
+    });
+  })
+
+  function makeThemWait(isLoading) {
+    // Create the HTML string
+    var element = '<div class="spinner-overlay"><div class="spinner"></div></div>',
+      body = document.querySelector('body');
+
+    // append HTML string to body
+    if (isLoading === true) {
+      body.insertAdjacentHTML('beforeend', element);
+
+      var spinnerOverlay = document.querySelector(".spinner-overlay"), // your spinner overlay
+        spinner = document.querySelector(".spinner"),
+        overlayStyles = spinnerOverlay.style, // var to allow styles control
+        spinnerStyles = spinner.style;
+
+      // styling the overlay
+      overlayStyles.display = "block";
+      overlayStyles.position = "absolute";
+      overlayStyles.top = "0";
+      overlayStyles.left = "0";
+      overlayStyles.right = "0";
+      overlayStyles.bottom = "0";
+      overlayStyles.backgroundColor = "rgba(255,255,255,0.5)";
+
+      // styling the spinner
+      spinnerStyles.width = "80px";
+      spinnerStyles.height = "80px";
+      spinnerStyles.borderRadius = "50%";
+      spinnerStyles.borderTop = "8px solid #D51067";
+      spinnerStyles.borderLeft = "8px solid transparent";
+      spinnerStyles.borderRight = "8px solid transparent";
+      spinnerStyles.borderBottom = "8px solid transparent";
+      spinnerStyles.margin = "calc(48vh - 40px) auto";
+      spinnerStyles.boxSizing = "border-box";
+
+      // Below lines are tweakable to fit your needs in term of spin properties and time.
+      // Here the spinner will make 2 full spins each seconds for 5 min. ((360deg * 2) * 300s)
+      spinnerStyles.transition = "transform 300s linear";
+      setTimeout(function () {
+        spinnerStyles.transform = "rotate(216000deg)";
+      }, 100);
+
+
+    }
+
+    if (!isLoading) {
+      var spinnerOverlay = document.querySelector(".spinner-overlay"); // your spinner overlay
+      body.removeChild(spinnerOverlay);
+    }
+  }
+
+
 }); // On Doc Ready
 
-
-
-// set counter
-// var i = 0;
-var ii = 0;
-
-
-// path for national park images
-srcC = "assets/img/";
-srcD = ".jpg";
-
-// nav bar
-$(document).ready(function () {
-  $(".button-collapse").sidenav();
-});
-
-$(document).ready(function () {
-  $('.sidenav').sidenav();
-});
-
-// parallax
-$(document).ready(function () {
-  $('.parallax').parallax();
-});
-
-// carousel
-$(document).ready(function () {
-  $('.carousel').carousel();
-
-  setInterval(function () {
-    $('.carousel').carousel('next');
-  }, 4500);
-});
-
-
-
-//modal button
-$(document).ready(function () {
-  $('.modal').modal();
-});
-
-$(".btn-floating").on("click", function () {
-  $('.hidden-stuff').removeClass('active');
-
-})
-
-$("#start").on("click", function () {
-  $('#start').hide();
-  $(".usa-wrapper").show("slow", function () {
-  });
-})
-
-function makeThemWait(isLoading) {
-  // Create the HTML string
-  var element = '<div class="spinner-overlay"><div class="spinner"></div></div>',
-    body = document.querySelector('body');
-
-  // append HTML string to body
-  if (isLoading === true) {
-    body.insertAdjacentHTML('beforeend', element);
-
-    var spinnerOverlay = document.querySelector(".spinner-overlay"), // your spinner overlay
-      spinner = document.querySelector(".spinner"),
-      overlayStyles = spinnerOverlay.style, // var to allow styles control
-      spinnerStyles = spinner.style;
-
-    // styling the overlay
-    overlayStyles.display = "block";
-    overlayStyles.position = "absolute";
-    overlayStyles.top = "0";
-    overlayStyles.left = "0";
-    overlayStyles.right = "0";
-    overlayStyles.bottom = "0";
-    overlayStyles.backgroundColor = "rgba(255,255,255,0.5)";
-
-    // styling the spinner
-    spinnerStyles.width = "80px";
-    spinnerStyles.height = "80px";
-    spinnerStyles.borderRadius = "50%";
-    spinnerStyles.borderTop = "8px solid #D51067";
-    spinnerStyles.borderLeft = "8px solid transparent";
-    spinnerStyles.borderRight = "8px solid transparent";
-    spinnerStyles.borderBottom = "8px solid transparent";
-    spinnerStyles.margin = "calc(48vh - 40px) auto";
-    spinnerStyles.boxSizing = "border-box";
-
-    // Below lines are tweakable to fit your needs in term of spin properties and time.
-    // Here the spinner will make 2 full spins each seconds for 5 min. ((360deg * 2) * 300s)
-    spinnerStyles.transition = "transform 300s linear";
-    setTimeout(function () {
-      spinnerStyles.transform = "rotate(216000deg)";
-    }, 100);
-
-
-  }
-
-  if (!isLoading) {
-    var spinnerOverlay = document.querySelector(".spinner-overlay"); // your spinner overlay
-    body.removeChild(spinnerOverlay);
-  }
-}
 
 
 function aud_play_pause() {
@@ -278,8 +251,3 @@ function aud_play_pause() {
     myAudio.pause();
   }
 }
-// to launch - add "true" as argument
-// makeThemWait(true);
-
-// to stop - no argument
-//setTimeout(function() {makeThemWait()}, 5000);
